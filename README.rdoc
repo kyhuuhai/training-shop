@@ -1,0 +1,13 @@
+Ruby - 2.3.0
+Rails - 4.2.11.1
+Postgres
+---------------------
+Install
+  rvm install 2.3.0
+  rvm use 2.3.0
+  Git clone ***
+  git checkout branch
+  bundle install
+  rake db:create
+  rake db:migrate
+  Access: localhost:3000
