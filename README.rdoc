@@ -1,5 +1,5 @@
-Ruby - 2.3.0
-Rails - 4.2.11.1
+ruby 2.6.5p114
+Rails 6.0.1
 Postgres
 ---------------------
 Install
