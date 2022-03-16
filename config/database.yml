@@ -5,6 +5,7 @@ default: &default
   username: root
   password: password
   reconnect: false
+  encoding: utf8
 
 development:
   <<: *default
