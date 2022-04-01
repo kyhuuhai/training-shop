@@ -144,6 +144,13 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.4.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (3.1.1)
     sprockets (4.0.3)
       concurrent-ruby (~> 1.0)
@@ -152,6 +159,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    temple (0.8.2)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -183,10 +191,11 @@ DEPENDENCIES
   pg
   rails (= 6.0.1)
   sass-rails
+  slim-rails
   spring
   turbolinks
   uglifier
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.17.3
+   2.1.4
