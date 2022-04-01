@@ -1,5 +1,7 @@
 ruby 2.6.5p114 (install by rvm)
+
 Rails 6.0.1
+
 Postgres
 ---------------------
 Install
