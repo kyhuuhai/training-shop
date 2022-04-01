@@ -1,17 +1,16 @@
-ruby 2.6.5p114
+ruby 2.6.5p114 (install by rvm)
 Rails 6.0.1
 Postgres
 ---------------------
 Install
-  rvm install 2.3.0
-  rvm use 2.3.0
+  rvm install 2.6.5p114
+  rvm use 2.6.5p114 --default
   Git clone ***
   git checkout branch
   bundle install
   rake db:create
   rake db:migrate
   Access: localhost:3000
-
 ------------------------------------
 Spec
   https://docs.google.com/spreadsheets/d/1iWfwf7XSZQzgHwn_H1lRFpJf1Zc-yxpb1dxVcMuXsuk/edit#gid=0
