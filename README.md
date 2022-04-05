@@ -8,7 +8,7 @@ Install
 
 - rvm install 2.7.5
 - rvm use 2.7.5 --default
-- git@github.com:kyhuuhai/training_shop.git
+- git@github.com:kyhuuhai/training-shop.git
 - git checkout your_name
 - bundle install
 - rake db:create
