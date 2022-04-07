@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_07_063022) do
+ActiveRecord::Schema.define(version: 2022_04_07_095714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2022_04_07_063022) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "category_products", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_category_products_on_category_id"
+    t.index ["product_id"], name: "index_category_products_on_product_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -31,18 +40,11 @@ ActiveRecord::Schema.define(version: 2022_04_07_063022) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "imageable_id"
-    t.string "imageable_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "order_details", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "order_id"
-    t.integer "quantity"
-    t.float "price"
+    t.integer "quantity", default: 1
+    t.float "price", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_order_details_on_order_id"
@@ -52,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_04_07_063022) do
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "payment_method_id"
-    t.text "status"
+    t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["payment_method_id"], name: "index_orders_on_payment_method_id"
@@ -78,14 +80,14 @@ ActiveRecord::Schema.define(version: 2022_04_07_063022) do
     t.bigint "user_id"
     t.string "rateable_id"
     t.string "rateable_type"
-    t.float "point"
+    t.float "point", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.string "name"
     t.string "email"
     t.text "address"
@@ -96,6 +98,8 @@ ActiveRecord::Schema.define(version: 2022_04_07_063022) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "category_products", "categories"
+  add_foreign_key "category_products", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
