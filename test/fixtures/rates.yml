@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  rateable_id: MyString
+  rateable_type: MyString
+  point: 1.5
+
+two:
+  user: two
+  rateable_id: MyString
+  rateable_type: MyString
+  point: 1.5
