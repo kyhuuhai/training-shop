@@ -1,0 +1,33 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h1 {
+    margin-bottom: 10px;
+}
+
+.logo {
+    color: orangered;
+    font-size: 27px;
+}
+
+.navbar {
+    #test {
+        padding-right: 35px;
+        border: none;
+    }
+    .mb-0 {
+        margin-bottom: 0;
+    }
+}
