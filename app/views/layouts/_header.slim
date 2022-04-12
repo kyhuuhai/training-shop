@@ -8,6 +8,10 @@ nav.navbar.navbar-default.navbar-static-top
         li= link_to "Home", root_path, class: "active"
         li= link_to "Help", help_path
         li= link_to "Contact", "#"
+        form.navbar-form.navbar-left
+          .form-group
+            input.form-control placeholder="Search..." type="text" /
+          = link_to "submit", "#" ,class: "btn btn-success"
         - if logged_in?
           li= link_to "Users", "#"
           li.dropdown.navbar-right
