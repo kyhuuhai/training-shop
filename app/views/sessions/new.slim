@@ -7,7 +7,9 @@ h1.text-center Log in
       = f.email_field :email, class: "form-control"
       = f.label :password, class: "mt-3"
       = f.password_field :password, class: "form-control"
+      = f.label :remember_me, class: "checkbox inline" do
+        = f.check_box :remember_me
+        span Remember me on this computer
       = f.submit "Log in", class: "btn btn-primary mt-3"
     p
-      | New user? #{ link_to "Sign up now!", "#" }
-
+      | New user? #{ link_to "Sign up now!", signup_path }
