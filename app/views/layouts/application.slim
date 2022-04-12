@@ -12,5 +12,7 @@ html
   body
     .container
       = render 'layouts/header' 
+      - flash.each do |message_type, message|
+        div class=("alert alert-#{message_type}") = message
       == yield 
       = render 'layouts/footer' 
