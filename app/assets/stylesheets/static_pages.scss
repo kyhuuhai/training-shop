@@ -2,34 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 section {
-    overflow: auto;
+  overflow: auto;
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .center {
-    text-align: center;
-    h1 {
-        margin-bottom: 10px;
-    }
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
 .logo {
-    padding: 5% 15px 5% 5%;
-    color: orangered;
-    font-size: 18px;
-    margin-top: 20px;
-    font-weight: 800;
+  padding: 5% 15px 5% 5%;
+  color: orangered;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: 800;
 }
 
 .navbar {
-    #test {
-        padding-right: 35px;
-        border: none;
-    }
-    .mb-0 {
-        margin-bottom: 0;
-    }
+  #test {
+    padding-right: 35px;
+    border: none;
+  }
+  .mb-0 {
+    margin-bottom: 0;
+  }
 }
