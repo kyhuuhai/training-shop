@@ -3,7 +3,7 @@ default: &default
   host: 127.0.0.1
   pool: 5
   username: postgres
-  password: root
+  password: password
   reconnect: false
   encoding: utf8
 
