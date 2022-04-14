@@ -13,6 +13,7 @@ gem "slim-rails"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
 gem "bcrypt"
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 
 group :development, :test do
   gem "byebug"

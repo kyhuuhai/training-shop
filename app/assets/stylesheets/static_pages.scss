@@ -33,3 +33,40 @@ textarea {
     margin-bottom: 0;
   }
 }
+
+.w-50 {
+  width: 50%;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+footer {
+  li {
+    list-style: none;
+    margin-left: -1.5em;
+    a {
+      color: #333;
+    }
+  }
+  .footer-top,
+  .footer-middle,
+  .footer-bottom {
+    padding: 10px;
+    padding-left: 60px;
+    border-top: 1px solid #ddd;
+  }
+  .footer-top {
+    .item {
+      float: left;
+      margin-right: 1em;
+      margin-top: 0.6em;
+    }
+  }
+  .footer-middle {
+    .fa {
+      margin-right: 10px;
+    }
+  }
+}
