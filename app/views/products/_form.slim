@@ -1,7 +1,6 @@
 = search_form_for @q do |f|
-  = f.search_field :name_cont, placeholder: "Search..."
-  = f.search_field :price_gteq
-  = f.search_field :price_lteq
-  = f.submit "Search!"
-
-  
+  = f.search_field :name_cont, placeholder: "Search...", class: 'form-control'
+  = f.label :price_gteq,"Price", class: 'form-control'
+  = f.search_field :price_gteq,placeholder: "From", class: 'form-control'
+  = f.search_field :price_lteq,placeholder: "To", class: 'form-control'
+  = f.submit "Search!",class: "btn btn-success"

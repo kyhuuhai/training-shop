@@ -1,4 +1,3 @@
-
 99.times do |n|
     name = Faker::Name.name
     code = "#{n+1}"

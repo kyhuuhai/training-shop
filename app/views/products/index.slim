@@ -1,9 +1,4 @@
 = render 'products/form'
-- @products.each do |p|
-  .product-text
-    .product-title
-      = p.name
-    .product-price
-      | £
-      = p.price
-p = will_paginate @products
+.all_products
+  = render @products
+p.paginate = will_paginate @products
