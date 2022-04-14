@@ -9,7 +9,7 @@ nav.navbar.navbar-default.navbar-static-top
         li= link_to "Contact", contact_path
         form.navbar-form.navbar-left
           .form-group
-            input.form-control placeholder="Search..." type="text" /
+            input.form-control placeholder="Search..." type="text" name="search"
           = link_to "submit", "#" ,class: "btn btn-success"
         - if logged_in?
           - if current_user.is_admin?

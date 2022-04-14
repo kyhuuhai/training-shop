@@ -1,0 +1,7 @@
+= search_form_for @q do |f|
+  = f.search_field :name_cont, placeholder: "Search..."
+  = f.search_field :price_gteq
+  = f.search_field :price_lteq
+  = f.submit "Search!"
+
+  
