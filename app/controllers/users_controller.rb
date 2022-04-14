@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   def index
   end
 
-  def signup
-  end
-
   def show
   end
 
@@ -54,7 +51,8 @@ class UsersController < ApplicationController
   end
 
   def get_user
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
+    redirect_to(root_url) unless @user
     redirect_to(root_url) unless current_user?(@user)
   end
 end

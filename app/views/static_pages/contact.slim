@@ -1,0 +1,21 @@
+- provide(:title, "Contact")
+- provide(:button_text, "Send")
+h1 Contact
+p.center.lead.mb-5
+  | If you can't find what you're looking for in the Shop Help Center, 
+  | then complete this contact form and 
+  | a support specialist will reach out to you.
+.row
+  .col-md-6.col-md-offset-3
+      .form-group
+        = label_tag "Name"
+        = text_field_tag "name", nil, class: "form-control"
+      .form-group
+        = label_tag "Email"
+        = text_field_tag "email", nil, class: "form-control"
+      .form-group
+        = label_tag "Message"
+        = text_area_tag "message", nil, class: "form-control", rows: 5
+      .form-group
+        = button_tag "Send", type: "button", class: "btn btn-success w-50"
+        = button_tag "Cancel", type: "button", class: "btn btn-default w-50"

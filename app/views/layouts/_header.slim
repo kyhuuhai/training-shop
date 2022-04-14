@@ -1,26 +1,29 @@
 nav.navbar.navbar-default.navbar-static-top
-  .container
+  .container.pt-1
     .navbar-header
       a.navbar-brand href="/" 
         b.logo  Shopppi
     .navbar.mb-0.
       ul.nav.navbar-nav.navbar-right
         li= link_to "Home", root_path, class: "active"
-        li= link_to "Help", help_path
-        li= link_to "Contact", "#"
+        li= link_to "Contact", contact_path
         form.navbar-form.navbar-left
           .form-group
             input.form-control placeholder="Search..." type="text" /
           = link_to "submit", "#" ,class: "btn btn-success"
         - if logged_in?
-          li= link_to "Users", "#"
-          li.dropdown.navbar-right
-            a.dropdown-toggle.mr-5 data-toggle="dropdown" type="button"
-              | Account
-              b.caret
-            ul.dropdown-menu
-              li= link_to "Profile", user_path(current_user)
-              li= link_to "Settings", edit_user_path(current_user)
-              li= link_to "Log out", logout_path, method: :delete
+          - if current_user.is_admin?
+            li= link_to "Users", "#"
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" type="button"
+                | Dashboard
+                b.caret
+              ul.dropdown-menu
+                li= link_to "Chart analysis", "#"
+                li= link_to "Profit statistics", "#"
+                li= link_to "Shipping analysis", "#"
+            li= render "layouts/account"
+          - else
+            li= render "layouts/account"
         - else
           li= link_to "Log in", login_path, class: "mr-5"
