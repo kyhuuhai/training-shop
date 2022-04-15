@@ -1,0 +1,7 @@
+- if !@users.empty?
+  .all_user
+    = render @users
+- else 
+  p There is no suitable product
+.paginate 
+  = will_paginate @users

@@ -1,15 +1,8 @@
 = render 'products/form'
-.all_products
-  - @products.each do |p|
-    .card 
-      .image 
-        img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
-      .name 
-        h1 = p.name 
-      .price
-        p = p.price 
-      .description
-        p = p.description
-      .button 
-        button Add to Cart
-p.paginate = will_paginate @products
+- if !@products.empty?
+  .all_products
+    = render @products
+- else 
+  p There is no suitable product
+.paginate 
+  = will_paginate @products
