@@ -34,8 +34,6 @@ class PasswordResetsController < ApplicationController
     end
   end
 
-  
-
   private
 
   def user_params
@@ -51,8 +49,6 @@ class PasswordResetsController < ApplicationController
   end
   # Confirms a valid user.
   def valid_user
-    unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
-      redirect_to root_url
-    end
+    redirect_to root_url unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
   end
 end
