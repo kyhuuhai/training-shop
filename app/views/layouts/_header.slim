@@ -5,15 +5,18 @@ nav.navbar.navbar-default.navbar-static-top
         b.logo  Shopppi
     .navbar.mb-0.
       ul.nav.navbar-nav.navbar-right
-        li= link_to "Home", root_path, class: "active"
+        - if logged_in?
+          li= link_to "Home", products_path, class: "active"
+        - else 
+          li= link_to "Home", root_path, class: "active"
         li= link_to "Contact", contact_path
         form.navbar-form.navbar-left
           .form-group
-            input.form-control placeholder="Search..." type="text" /
-          = link_to "submit", "#" ,class: "btn btn-success"
+            input.form-control placeholder="Search..." type="text" name="search"
+          = link_to "submit", products_path ,class: "btn btn-success"
         - if logged_in?
           - if current_user.is_admin?
-            li= link_to "Users", "#"
+            li= link_to "Users", admins_path
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" type="button"
                 | Dashboard
