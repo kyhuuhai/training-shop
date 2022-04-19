@@ -9,21 +9,20 @@
       category ="2"
     end
     Product.create!(name: name,
-                    code: code,
-                    price: price,
-                    description: description,
-                    category_ids: category
-                    
-    )
-    end
+      code: code,
+      price: price,
+      description: description,
+      category_ids: category)
+end
+
 99.times do |n|
     name = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
     password = "password"
     User.create!(name: name,
-                 email: email,
-                 password: password,
-                 password_confirmation: password,
-                 activated: true,
-                 activated_at: Time.zone.now)
+      email: email,
+      password: password,
+      password_confirmation: password,
+      activated: true,
+      activated_at: Time.zone.now)
 end

@@ -4,8 +4,8 @@ class ProductsController < ApplicationController
     @products = @q.result(distinct: true).paginate(page: params[:page], :per_page => 3).ordered_by_price
   end
 
-  def new 
-		@product = Product.new
+  def new
+    @product = Product.new
   end
 
   def create
@@ -20,8 +20,8 @@ class ProductsController < ApplicationController
       redirect_to products_path   
     end
   end
-  private 
 
+  private 
   def product_params
     params.require(:product).permit(:name, category_ids:[])
   end
