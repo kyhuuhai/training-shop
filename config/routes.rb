@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/show", to: "users#show"
   get "/signup", to: "users#new"
+  get "/chitiet", to: "products#show"
+  get "admin", to: "admins#index"
   resources :products
   resources :users
+  resources :admins
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end

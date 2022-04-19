@@ -1,13 +1,16 @@
 nav.navbar.navbar-default.navbar-static-top
   .container.pt-1
     .navbar-header
-      a.navbar-brand href="/" 
+      a.navbar-brand href="/"
         b.logo  Shopppi
-    .navbar.mb-0.
+    .navbar.mb-0
       ul.nav.navbar-nav.navbar-right
         - if logged_in?
-          li= link_to "Home", products_path, class: "active"
-        - else 
+          - if current_user.is_admin?
+            li= link_to "Home", admin_path, class: "active"
+          - else
+            li= link_to "Home", products_path, class: "active"
+        - else
           li= link_to "Home", root_path, class: "active"
         li= link_to "Contact", contact_path
         form.navbar-form.navbar-left
