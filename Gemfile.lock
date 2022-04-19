@@ -206,8 +206,8 @@ DEPENDENCIES
   bootstrap-will_paginate
   byebug
   coffee-rails
-  font-awesome-rails (~> 4.7, >= 4.7.0.5)
   faker
+  font-awesome-rails (~> 4.7, >= 4.7.0.5)
   jbuilder
   jquery-rails
   pg

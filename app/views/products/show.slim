@@ -2,12 +2,10 @@
   .image 
     img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
   .name 
-    p = product.name 
+    p = @product.name 
   .price
-    p = product.price 
+    p = @product.price 
   .description
-    p = product.description
-  .detail   
-    = link_to "Product Detail", product 
+    p = @product.description
   .button 
     button Add to Cart

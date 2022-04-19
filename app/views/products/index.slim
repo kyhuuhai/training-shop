@@ -1,4 +1,8 @@
 = render 'products/form'
-.all_products
-  = render @products
-p.paginate = will_paginate @products
+- if !@products.empty?
+  .all_products
+    = render @products
+- else 
+  p There is no suitable product
+.paginate 
+  = will_paginate @products
