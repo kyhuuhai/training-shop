@@ -17,6 +17,7 @@ nav.navbar.navbar-default.navbar-static-top
         - if logged_in?
           - if current_user.is_admin?
             li= link_to "Users", admins_path
+            li= link_to "Categories", admin_categories_path
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" type="button"
                 | Dashboard
