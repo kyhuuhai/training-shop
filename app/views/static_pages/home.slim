@@ -1,5 +1,40 @@
-= render "products/form"
-.all_products
-  = render @products
-.paginate
-  = will_paginate @products
+- if logged_in? 
+  - if current_user.is_admin?
+    .container-fluid
+      .row
+        .col-sm-3.col-md-2.sidebar
+          p 
+            / i.fa-solid.fa-house-chimney
+            img.iconHome src="https://i.imgur.com/B4ySD38.png"
+            |  Dashboard
+          ul.nav.nav-sidebar
+            li
+              = link_to "Product", admin_products_path
+            li
+              = link_to "User", admin_users_path
+            li
+              = link_to "Category", admin_categories_path
+            li
+              = link_to "Order"
+            li
+              = link_to "Chart analysis"
+            li
+              = link_to "Statistical profit"
+            li
+              = link_to "Shipping analysis"
+            li
+              = link_to "Shipping Management"
+            li
+              = link_to "Contact"
+  - else
+    .center.jumbotron
+      h1 
+        |Welcome to the 
+        b Shopppi
+      = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" 
+- else
+  .center.jumbotron
+    h1 
+      |Welcome to the 
+      b Shopppi
+    = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" 

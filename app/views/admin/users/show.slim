@@ -1,0 +1,23 @@
+.showUser
+  = form_for([:admin, @user]) do |f|
+    - if @user.avatar.attached?
+      .avatar
+        = image_tag @user.avatar
+    - else
+      .avatar
+        = gravatar_for @user
+    -if @user.is_admin?
+      p Tài khoản: Admin 
+    -else
+      p Tài khoản: User
+    b ID: 
+    = @user.id
+    br
+    b Tên tài khoản: 
+    = @user.name
+    p
+      b Email: 
+      = @user.email
+    p
+      b Address: 
+      = @user.address

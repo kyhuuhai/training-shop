@@ -5,7 +5,13 @@ nav.navbar.navbar-default.navbar-static-top
         b.logo  Shopppi
     .navbar.mb-0
       ul.nav.navbar-nav.navbar-right
-        li= link_to "Home", root_path, class: "active"
+        - if logged_in?
+          - if current_user.is_admin?
+            li= link_to "Home", root_path, class: "active"
+          - else
+            li= link_to "Home", products_path, class: "active"
+        - else
+          li= link_to "Home", root_path, class: "active"
         li= link_to "Contact", contact_path
         form.navbar-form.navbar-left
           .form-group
@@ -13,9 +19,6 @@ nav.navbar.navbar-default.navbar-static-top
           = link_to "submit", products_path ,class: "btn btn-success"
         - if logged_in?
           - if current_user.is_admin?
-            li= link_to "Users", admins_path
-            li= link_to "Categories", admin_categories_path
-            li= link_to "Products", admin_products_path
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" type="button"
                 | Dashboard
