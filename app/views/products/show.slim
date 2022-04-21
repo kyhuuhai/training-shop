@@ -1,6 +1,12 @@
 .card 
-  .image 
-    img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
+  - if @product.images.attached?
+    - @product.images.each do |image| 
+      .image
+        = image_tag image 
+      br
+  - else 
+    .image 
+      img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
   .name 
     p = @product.name 
   .price
