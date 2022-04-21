@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   has_many_attached :images
+  belongs_to :order_detail
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :category_products, dependent: :destroy
   has_many :categories, through: :category_products
@@ -8,7 +9,7 @@ class Product < ActiveRecord::Base
   validates :name, presence: true
   validates :price, presence: true
   validates :description, presence: true
-  
+
   default_scope { order(created_at: :desc) }
   scope :ordered_by_name, -> { order(name: :desc) }
   scope :ordered_by_price, -> { order(name: :desc) }

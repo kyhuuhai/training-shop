@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2022_04_20_071108) do
     t.string "name"
     t.float "price"
     t.text "description"
+    t.integer "quantity", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
