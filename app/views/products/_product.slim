@@ -5,13 +5,12 @@
   - else 
     .image 
       img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
-  .name 
-    p = product.name 
+  .name
+    h3 = product.name
   .price
-    p = product.price 
+    p = product.price.to_s + " $"
   .description
     p = product.description
-  .detail   
-    = link_to "Product Detail", product 
-  .button 
-    button Add to Cart
+  .detail.mb-15
+    = link_to "Product Detail", product, class: "btn btn-primary btn-cart"
+  =link_to "Add to Cart", add_to_carts_path(id: product.id, quantity: 1), method: :post, class: "btn btn-primary btn-cart"
