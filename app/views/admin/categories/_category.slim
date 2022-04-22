@@ -1,0 +1,8 @@
+tbody
+  tr
+    td= category.name
+    td
+      = link_to "Edit |", edit_admin_category_path(category)
+      = link_to "All products |", admin_category_path(category)
+      = link_to "Delete |", admin_category_path(category), method: :delete
+

@@ -1,4 +1,10 @@
+h1 Store Categories
+| Please add categories to your store #{link_to "adding new products", new_admin_product_path}
 = render 'products/form'
-.all_products
-  = render @products
-p.paginate = will_paginate @products
+- if !@products.empty?
+  .all_products
+    = render @products
+- else 
+  p There is no suitable product
+.paginate 
+  = will_paginate @products

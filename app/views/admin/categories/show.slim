@@ -1,0 +1,21 @@
+- if @products.present?
+  table.table.table-condensed
+    thead
+      tr
+        td
+          b CODE
+        td
+          b Name
+        td
+          b Price
+        td
+          b Description
+        td
+          b Image
+        td
+          b Modify
+    = render @products
+- else 
+  p There is no suitable product
+.paginate 
+  = will_paginate @products

@@ -1,27 +1,7 @@
-.container-fluid
-  .row
-    .col-sm-3.col-md-2.sidebar
-      p 
-        / i.fa-solid.fa-house-chimney
-        img.iconHome src="https://i.imgur.com/B4ySD38.png"
-        |  Dashboard
-      ul.nav.nav-sidebar
-        li
-          = link_to "Product", root_path 
-        li
-          = link_to "User", root_path 
-        li
-          = link_to "Category", root_path 
-        li
-          = link_to "Order", root_path 
-        li
-          = link_to "Chart analysis", root_path 
-        li
-          = link_to "Statistical profit", root_path 
-        li
-          = link_to "Shipping analysis", root_path 
-        li
-          = link_to "Shipping Management", root_path 
-        li
-          = link_to "Contact", root_path 
-
+- if @users.present?
+  .all_user
+    = render @users
+- else 
+  p There is no suitable user
+.paginate 
+  = will_paginate @users

@@ -1,72 +1,17 @@
-.container.chinhsua
-  .card.productDetails
-    .container-fliud
-      .wrapper.row.formchinh
-        .preview.col-md-6
-          .preview-pic.tab-content
-            #pic-1.tab-pane.active
-              img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-            #pic-2.tab-pane
-              img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-            #pic-3.tab-pane
-              img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-            #pic-4.tab-pane
-              img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-            #pic-5.tab-pane
-              img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-          ul.preview-thumbnail.nav.nav-tabs
-            / .logo_menuchinh style=("float:left; padding-top:5px; padding-left:10px; color:#fff; margin-left:auto; margin-right:auto; text-align=center; line-height:40px; font-size:16px;font-weight:bold;font-family:Arial")  HOCWEBGIARE.COM
-            .menu-icon
-              hr.hr
-            li.activeV2
-              a data-target="#pic-1" data-toggle="tab" 
-                img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png"/
-            li.activeV2
-              a data-target="#pic-2" data-toggle="tab" 
-                img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-            li.activeV2
-              a data-target="#pic-3" data-toggle="tab" 
-                img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png"/
-            li.activeV2
-              a data-target="#pic-4" data-toggle="tab" 
-                img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-            li.activeV2
-              a data-target="#pic-5" data-toggle="tab" 
-                img.anhSP alt="" src="https://i.imgur.com/RixxhUy.png" /
-        .details.col-md-6 
-          h3.product-title 
-            = @product.name
-          .rating
-            .stars
-              span.fa.fa-star.checked
-              span.fa.fa-star.checked
-              span.fa.fa-star.checked
-              span.fa.fa-star
-              span.fa.fa-star
-            span.review-no 123 đánh giá
-          h4.price 
-            | Giá bán:
-            = @product.price
-          p.product-description 
-            = @product.description
-          .checkProduct.productAvailable
-            strong> Tình trạng:
-            | Còn hàng
-          p.vote
-            strong 100%
-            |  khách hàng hài lòng về sản phẩm
-          h5.sizes
-            | Loại:
-            span.size data-toggle="tooltip" title="small"  1
-            span.size data-toggle="tooltip" title="medium" -2
-            span.size data-toggle="tooltip" title="large" -3
-            span.size data-toggle="tooltip" title=("xtra large") -4
-          .itemQuantity
-            b
-              | Số lượng:
-            input#quantity.quantitySelector min="1" name="quantity" type="number" value="1" /
-          .action
-            a href="#" target="_blank" 
-              button.add-to-cart.btn.btn-default.addSP type="button"Thêm vào giỏ
-            a href="#" target="_blank" 
-              button.add-to-cart.btn.btn-default.addSP type="button"Mua ngay
+.card 
+  - if @product.images.attached?
+    - @product.images.each do |image| 
+      .image
+        = image_tag image 
+      br
+  - else 
+    .image 
+      img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
+  .name 
+    p = @product.name 
+  .price
+    p = @product.price 
+  .description
+    p = @product.description
+  .button 
+    button Add to Cart

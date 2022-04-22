@@ -1,5 +1,5 @@
-.center.jumbotron
-  h1 
-    |Welcome to the 
-    b Shopppi
-  = link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" 
+= render "products/form"
+.all_products
+  = render @products
+.paginate
+  = will_paginate @products

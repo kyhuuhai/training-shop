@@ -16,10 +16,12 @@ nav.navbar.navbar-default.navbar-static-top
         form.navbar-form.navbar-left
           .form-group
             input.form-control placeholder="Search..." type="text" name="search"
-          = link_to "submit", "#" ,class: "btn btn-success"
+          = link_to "submit", products_path ,class: "btn btn-success"
         - if logged_in?
           - if current_user.is_admin?
-            li= link_to "Users", "#"
+            li= link_to "Users", admins_path
+            li= link_to "Categories", admin_categories_path
+            li= link_to "Products", admin_products_path
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" type="button"
                 | Dashboard
