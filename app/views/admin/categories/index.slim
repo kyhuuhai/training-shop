@@ -1,0 +1,12 @@
+h1 Store Categories
+| Please add categories to your store #{link_to "adding new categorys", new_admin_category_path}
+table.table.table-condensed
+  thead
+    tr
+      td
+        b Name
+      td
+        b Modify
+  = render @categories
+.paginate 
+  = will_paginate @categories

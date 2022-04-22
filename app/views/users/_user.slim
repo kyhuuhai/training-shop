@@ -3,8 +3,6 @@
     p  = user.name 
   .email
     p = user.email 
-  
-  .detail   
-    = link_to "Detail |",  user
+  .action   
     = link_to "Edit |",  user
-    = link_to "Delete",  user
+    = link_to "Delete", user, method: :delete
