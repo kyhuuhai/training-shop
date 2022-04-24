@@ -8,14 +8,15 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by_id(params[:id])
-    if !@product 
+    if !@product
       flash[:info] = "Không tìm thấy thông tin sản phẩm"
-      redirect_to products_path   
+      redirect_to products_path
     end
   end
 
-  private 
+  private
+
   def product_params
-    params.require(:product).permit(:name, :code, :price, :description, category_ids:[], images: [])
+    params.require(:product).permit(:name, :code, :price, :description, category_ids: [], images: [])
   end
 end
