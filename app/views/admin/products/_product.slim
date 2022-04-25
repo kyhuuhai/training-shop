@@ -11,7 +11,7 @@ tbody
     td.image
       - if product.images.attached? 
         - product.images.each do |image| 
-            = image_tag image 
+            = image_tag(url_for(image))
       - else 
         img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
     td.chucNang

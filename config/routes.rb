@@ -13,12 +13,13 @@ Rails.application.routes.draw do
 
   resources :products
   resources :users
+  resources :orders
+
   namespace :admin do
     resources :categories
     resources :products
     resources :users
   end
-
   resources :account_activations, only: %i(edit)
   resources :password_resets, only: %i(new create edit update)
   resources :carts, only: %i(index) do

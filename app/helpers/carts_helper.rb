@@ -12,7 +12,7 @@ module CartsHelper
     current_cart.each do |item|
       product = Product.where(id: item["product_id"]).includes(:order_detail)
       if product
-        cart_items << { product: product, quantity: item["quantity"] }
+        cart_items << { product: product, quantity: item["quantity"], images: item["images"] }
       else
         current_cart.delete(item)
       end

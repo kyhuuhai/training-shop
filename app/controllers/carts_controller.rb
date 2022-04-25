@@ -1,3 +1,4 @@
+require 'cart.rb'
 class CartsController < ApplicationController
   before_action :check_empty_cart, only: [:index, :remove_from_cart]
   before_action :get_line_item, only: [:add_to_cart, :remove_from_cart]
@@ -11,8 +12,12 @@ class CartsController < ApplicationController
       @item["quantity"] += params[:quantity].to_i
       flash[:info] = "Added #{params[:quantity]} #{@product.name} to cart."
     else
-      current_cart << { product_id: @product.id, name: @product.name, price: @product.price, quantity: params[:quantity].to_i }
-      flash[:success] = "Added #{params[:quantity]} #{@product.name} to cart."
+      images = []
+      @product.images.each do |img|
+        images << url_for(img)
+      end
+      current_cart << { product_id: @product.id, name: @product.name, price: @product.price, quantity: params[:quantity].to_i, images: images}
+      flash[:success] = "Added #{params[:quantity]} #{@product.name}  to cart."
     end
     session[:cart] = current_cart
     redirect_to root_path
@@ -30,7 +35,7 @@ class CartsController < ApplicationController
   private
 
   def check_empty_cart
-    if session[:cart].empty?
+    if session[:cart].nil?
       redirect_to root_path
       flash[:info] = "Cart is empty."
     end

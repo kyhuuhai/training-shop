@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
 
   validates :code, presence: true
   validates :name, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { only_integer: true }
   validates :description, presence: true
 
   default_scope { order(created_at: :desc) }

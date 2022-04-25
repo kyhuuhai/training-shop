@@ -1,0 +1,17 @@
+= form_for(@order) do |f|
+  - if @order.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@order.errors.count, "error")
+        |  prohibited this order from being saved: 
+      ul
+        - @order.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = f.hidden_field :user_id, :value => current_user.id 
+    = f.label :payment_method
+    br
+    = f.collection_select :payment_method_id, PaymentMethod.all, :id, :name 
+  .actions
+    = f.submit 'Order'
