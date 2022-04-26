@@ -1,6 +1,6 @@
 - provide(:title, "Cart")
 h1 My Cart
-table.table.table-bordered
+table.table.table-bordered id="table"
   thead.bg-primary
     tr
       th.text-center Name
@@ -19,14 +19,18 @@ table.table.table-bordered
           .product-thumbnail
             img.img-fluid alt="image-product" src="https://www.w3schools.com/w3images/jeans3.jpg"
         td.text-center.w-15
-          .cart-price
-            = item[:product][0]["price"]
+          .cart-price id="price-#{item[:product][0]["id"]}"
+            = item[:product][0]["price"].to_s + " $"
         = form_with do |f|
           td.text-center.w-15
-            = f.number_field :quantity, value: item[:quantity], min: 1, max: 10, class: "text-center form-control"
+            = f.button "Sub", class: "btn btn-default sub-btn", data: { id: "#{item[:product][0]["id"]}" }, type: "button" do
+              i.fa.fa-minus
+            = f.text_field "quantity", value: item[:quantity], class: "text-center form-control number-input cart-quantity", id: "cart_#{item[:product][0]["id"]}"
+            = f.button "Add", class: "btn btn-default add-btn", data: { id: "#{item[:product][0]["id"]}" }, type: "button" do
+              i.fa.fa-plus
         td
-          .fw-bold.cart-subtotal
-            = subtotal(item)
+          .fw-bold.cart-subtotal id="subtotal-#{item[:product][0]["id"]}"
+            = subtotal(item).to_s + " $"
         td.text-center.btn-action
           =link_to remove_from_carts_path(id: item[:product][0].id), method: :delete, class: "btn btn-danger btn-cart" do
             span Delete
@@ -35,7 +39,8 @@ table.table.table-bordered
     tr
       td.text-center.fw-bold colspan="4"  Total
       td.fw-bold colspan = "2"
-        span= total_price
-.pb-3
+        span#total-price
+          = total_price.to_s + " $"
+.pb-3.pt-3
   = link_to "Continue Shopping", root_path, class: "btn btn-primary mr-5"
   = link_to "Order", "#", class: "btn btn-success"
