@@ -1,9 +1,20 @@
 - provide(:title, @user.name)
 .row
-  aside.col-md-4
-    section.user_info
-      h1
+  h2
+    - if @user.avatar.attached?
+      .avatar
+        = image_tag @user.avatar
+    - else
+      .avatar
         = gravatar_for @user
-        = @user.name
-        br
-        = @user.email
+    = @user.name
+  br
+  .information
+    b Username: 
+    = @user.name
+    br
+    b Email: 
+    = @user.email
+    br
+    b Address: 
+    = @user.address
