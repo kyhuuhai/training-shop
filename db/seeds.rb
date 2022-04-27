@@ -11,16 +11,11 @@ User.create!(name: "Admin User",
   code = "#{n + 1}"
   price = "#{(n + 1) * 100}"
   description = Faker::Lorem.sentence(5)
-  if n % 2 == 1
-    category = "1"
-  else
-    category = "2"
-  end
+
   Product.create!(name: name,
                   code: code,
                   price: price,
-                  description: description,
-                  category_ids: category)
+                  description: description)
 end
 
 99.times do |n|

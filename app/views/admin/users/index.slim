@@ -1,0 +1,17 @@
+table.table.table-bordered
+  tr
+    td.userId
+      b ID
+    td.userName
+      b User name
+    td.email 
+      b Email
+    td.userAvatar
+      b Avatar
+    td.loaiUser
+      b Loại
+    td.chucNang
+      b Chức năng
+= render @users
+.paginate 
+  = will_paginate @users
