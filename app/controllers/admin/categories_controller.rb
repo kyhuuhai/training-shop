@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < AdminsController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,24 +6,24 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
-    @products =@category.products.all.paginate(page: params[:page], per_page: 10)
+    @products = @category.products.all.paginate(page: params[:page], per_page: 10)
   end
 
   def edit
   end
-  
-  def new 
+
+  def new
     @category = Category.new
   end
 
   def create
     @category = Category.new(category_params)
-      if @category.save
-        flash[:success] = "category was successfully created."
-        redirect_to admin_categories_path
-      else
-        render "new"
-      end 
+    if @category.save
+      flash[:success] = "category was successfully created."
+      redirect_to admin_categories_path
+    else
+      render "new"
+    end
   end
 
   def update
@@ -42,13 +42,13 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  private
 
-  private 
   def set_category
     @category = Category.find_by_id(params[:id])
-    if !@category 
+    if !@category
       flash[:info] = "Không tìm thấy thông tin sản phẩm"
-      redirect_to admin_categories_path   
+      redirect_to admin_categories_path
     end
   end
 

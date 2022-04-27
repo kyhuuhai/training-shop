@@ -1,18 +1,17 @@
-class Admin::ProductsController < ApplicationController
-  before_action :set_product, only: [ :edit, :update, :destroy]
+class Admin::ProductsController < AdminsController
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
-
     @category = Category.find_by_id(params[:category_id])
     if @category
       @products = @category.products.all
         .search_product(params)
         .paginate(page: params[:page], per_page: 10)
         .ordered_by_price
-    else 
+    else
       @products = Product.search_product(params)
-      .paginate(page: params[:page], per_page: 10)
-      .ordered_by_price
+        .paginate(page: params[:page], per_page: 10)
+        .ordered_by_price
     end
   end
 
@@ -24,7 +23,7 @@ class Admin::ProductsController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to admin_products_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -38,27 +37,28 @@ class Admin::ProductsController < ApplicationController
       flash[:success] = "Created product sucessfully"
       redirect_to new_admin_product_path
     else
-      render 'new'
+      render "new"
     end
   end
 
-  
   def destroy
-    if @product.destroy 
+    if @product.destroy
       flash[:info] = "Deleted"
       redirect_to admin_products_path
     end
   end
 
-  private 
+  private
+
   def set_product
     @product = Product.find_by_id(params[:id])
-    if !@product 
+    if !@product
       flash[:info] = "Không tìm thấy thông tin sản phẩm"
-      redirect_to admin_products_path   
+      redirect_to admin_products_path
     end
   end
+
   def product_params
-    params.require(:product).permit(:name, :code, :price, :description, category_ids:[], images: [])
+    params.require(:product).permit(:name, :code, :price, :description, category_ids: [], images: [])
   end
 end

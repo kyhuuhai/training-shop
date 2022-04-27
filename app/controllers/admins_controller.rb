@@ -1,5 +1,10 @@
 class AdminsController < ApplicationController
-  def index
-    @users = User.all.paginate(page: params[:page], per_page: 10)
+  before_action :is_admin
+
+  def is_admin
+    unless current_user.is_admin?
+      flash[:danger] = "Không the truy cap"
+      redirect_to root_url
+    end
   end
 end

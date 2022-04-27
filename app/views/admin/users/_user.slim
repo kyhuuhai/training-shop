@@ -1,0 +1,28 @@
+table.table.table-bordered
+  tr
+    td.userId
+      = user.id
+    td.userName
+      = user.name
+    td.email
+      = user.email
+    td.userAvatar
+      - if user.avatar.attached?
+        .avatars
+          = image_tag user.avatar
+      - else
+        .avatars
+          = gravatar_for user
+    td.loaiUser
+      -if user.is_admin?
+        h5 Admin 
+      -else
+        h5 User
+    td.chucNang
+      button.CN.detail
+        = link_to admin_user_path(user)
+          i.fa.fa-info-circle
+      button.CN.delete
+        = link_to admin_user_path(user) , method: :delete,
+                                data: { confirm: "Bạn có muốn xóa user: "+user.name }
+          i.fa.fa-trash-o

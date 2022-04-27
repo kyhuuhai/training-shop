@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+  end
   root "static_pages#home"
   get "/help", to: "static_pages#help"
   get "/contact", to: "static_pages#contact"
@@ -10,10 +13,10 @@ Rails.application.routes.draw do
 
   resources :products
   resources :users
-  resources :admins
   namespace :admin do
     resources :categories
     resources :products
+    resources :users
   end
 
   resources :account_activations, only: %i(edit)
@@ -24,4 +27,6 @@ Rails.application.routes.draw do
       delete "remove_from_cart/:id", to: "carts#remove_from_cart", as: "remove_from"
     end
   end
+  resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end
