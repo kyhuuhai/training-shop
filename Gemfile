@@ -16,6 +16,8 @@ gem "bcrypt"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 gem "ransack"
 gem "faker"
+gem "chartkick"
+gem "groupdate"
 
 group :development, :test do
   gem "byebug"

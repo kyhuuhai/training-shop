@@ -1,0 +1,8 @@
+= line_chart Order.group_by_day(:created_at).count
+br
+= column_chart Product.group_by_day(:created_at).count
+br
+= pie_chart	 OrderDetail.group_by_day(:created_at).count
+br
+= area_chart OrderDetail.group(:product_id).count
+br
