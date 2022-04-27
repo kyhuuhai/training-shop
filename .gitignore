@@ -12,6 +12,12 @@
 /db/*.sqlite3-journal
 /config/database.yml
 
+/node_modules
+yarn.lock
+yarn-error.log
+yarn-debug.log
+yarn-integrity.json
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep

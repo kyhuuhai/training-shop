@@ -10,7 +10,6 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates :description, presence: true
 
-  default_scope { order(created_at: :desc) }
   scope :ordered_by_name, -> { order(name: :desc) }
   scope :ordered_by_price, -> { order(name: :desc) }
   scope :search_name, ->(name) { where("name LIKE ?", "%#{name}%") if name.present? }
