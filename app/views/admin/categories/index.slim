@@ -1,12 +1,17 @@
-h1 Store Categories
-| Please add categories to your store #{link_to "adding new categorys", new_admin_category_path}
-table.table.table-condensed
-  thead
-    tr
-      td
-        b Name
-      td
-        b Modify
-  = render @categories
-.paginate 
-  = will_paginate @categories
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    h1  =t("products.index.category")
+    span= t("products.index.content1")
+    span= link_to t(".add_category"), new_admin_category_path
+    table.table.table-condensed
+      thead
+        tr
+          td
+            b= t("carts.index.name")
+          td
+            b= t(".modify")
+      = render @categories
+    .paginate 
+      = will_paginate @categories

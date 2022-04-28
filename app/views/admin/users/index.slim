@@ -1,17 +1,21 @@
-table.table.table-bordered
-  tr
-    td.userId
-      b ID
-    td.userName
-      b User name
-    td.email 
-      b Email
-    td.userAvatar
-      b Avatar
-    td.loaiUser
-      b Loại
-    td.chucNang
-      b Chức năng
-= render @users
-.paginate 
-  = will_paginate @users
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    table.table.table-bordered
+      tr
+        td.userId
+          b ID
+        td.userName
+          b= t("users.show.username")
+        td.email 
+          b Email
+        td.userAvatar
+          b= t("users.form.avatar")
+        td.loaiUser
+          b= t(".type")
+        td.chucNang
+          b= t(".action")
+    = render @users
+    .paginate 
+      = will_paginate @users

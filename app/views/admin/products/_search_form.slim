@@ -2,5 +2,5 @@
   p
     = text_field_tag :name, params[:name]
     = collection_select(nil, :category_id, Category.all, :id, :name, prompt: true,class: "filter-search")
-    = submit_tag "Search", :name => nil
+    = submit_tag t("layouts.header.search"), :name => nil
     

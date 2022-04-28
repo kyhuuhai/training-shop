@@ -1,16 +1,16 @@
 = form_for ([:admin, @product]) do |f|
   = render 'shared/error_messages', object: f.object 
-  = f.label "Code"
+  = f.label "Code", t("admin.categories.show.code")
   = f.text_field :code
-  = f.label "Name"
+  = f.label "Name", t("carts.index.name")
   = f.text_field :name
-  = f.label "Price"
+  = f.label "Price", t("carts.index.price")
   = f.text_field :price
-  = f.label "Description"
+  = f.label "Description", t("admin.categories.show.description")
   = f.text_field :description
-  = f.label "Danh muc"
+  = f.label "Categories", t("products.index.category")
   = f.collection_check_boxes :category_ids, Category.all, :id, :name 
   br
-  = f.label "Images"
+  = f.label "Images", t("carts.index.image")
   = f.file_field :images, multiple: true 
   = f.submit 

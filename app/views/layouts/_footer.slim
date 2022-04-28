@@ -6,39 +6,39 @@ footer
           .item
             i.fa.fa-question-circle.fa-2x
           h6 24/7
-          p Hỗ trợ miễn phí
+          p = t(".assistant")
       .col-md-4
         .flex-container
           .item
             i.fa.fa-money.fa-2x
-          h6 100% HOÀN TIỀN
-          p Bảo hành
+          h6 = t(".refund")
+          p = t(".insurance")
       .col-md-4
         .flex-container
           .item
             i.fa.fa-truck.fa-2x
-          h6 MIỄN PHÍ SHIPPING
-          p Toàn quốc
+          h6 = t(".free_shipping")
+          p = t(".nationwide")
   .footer-middle
     .row
       .col-md-4
         .footer-detail
-          h6 VỀ CHÚNG TÔI
+          h6 = t(".about_me")
           ul
-            li= link_to "Giới thiệu", "#"
-            li= link_to "Giao hàng - Đổi trả", "#"
-            li= link_to "Chính sách bảo mật", "#"
-            li= link_to "Liên hệ", "#"
+            li= link_to t(".introduce"), "#"
+            li= link_to t(".delivery_returns"), "#"
+            li= link_to t(".privacy_policy"), "#"
+            li= link_to t(".contact"), "#"
       .col-md-4
         .footer-detail
           h6 TRỢ GIÚP
           ul              
-            li= link_to "Hướng dẫn mua hàng", "#"
-            li= link_to "Hướng dẫn thanh toán", "#"
-            li= link_to "Tài khoản giao dịch", "#"
+            li= link_to t(".shopping_guide"), "#"
+            li= link_to t(".payment_guide"), "#"
+            li= link_to t(".trading_account"), "#"
       .col-md-4
         .footer-detail
-          h6 KẾT NỐI VỚI CHÚNG TÔI
+          h6 =t(".connect")
           ul
             li
               a href="#" 

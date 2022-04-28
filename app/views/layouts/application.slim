@@ -11,6 +11,8 @@ html
     = csrf_meta_tags 
   body
     .container
+      = link_to "English", locale:"en"
+      = link_to "Vietnamese", locale:"vi"
       = render 'layouts/header' 
       - flash.each do |message_type, message|
         div class=("alert alert-#{message_type}") = message

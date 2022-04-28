@@ -15,9 +15,9 @@ table.table.table-bordered
           = gravatar_for user
     td.loaiUser
       -if user.is_admin?
-        h5 Admin 
+        h5= t(".admin")
       -else
-        h5 User
+        h5= t("layouts.dashboard.user")
     td.chucNang
       button.CN.detail
         = link_to admin_user_path(user)

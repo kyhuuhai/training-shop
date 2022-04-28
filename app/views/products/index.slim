@@ -1,10 +1,11 @@
-h1 Store Categories
-| Please add categories to your store #{link_to "adding new products", new_admin_product_path}
+h1 =t(".category")
+span= t(".content1")
+span= link_to t(".add_product"), new_admin_product_path
 = render 'products/form'
 - if !@products.empty?
   .all_products
     = render @products
 - else 
-  p There is no suitable product
+  p = t(".content2")
 .paginate 
   = will_paginate @products

@@ -1,14 +1,14 @@
 - provide(:title, "Cart")
-h1 My Cart
+h1 = t(".my_cart")
 table.table.table-bordered id="table"
   thead.bg-primary
     tr
-      th.text-center Name
-      th.text-center Image
-      th.text-center Price
-      th.text-center Quantity
-      th.text-center Total
-      th.text-center Action
+      th.text-center = t(".product")
+      th.text-center = t(".image")
+      th.text-center = t(".price")
+      th.text-center = t(".quantity")
+      th.text-center = t(".total")
+      th.text-center
   tbody
     - @cart_items.each do |item|
       tr
@@ -33,14 +33,14 @@ table.table.table-bordered id="table"
             = subtotal(item).to_s + " $"
         td.text-center.btn-action
           =link_to remove_from_carts_path(id: item[:product][0].id), method: :delete, class: "btn btn-danger btn-cart" do
-            span Delete
+            span = t(".delete")
             i.fa.fa-trash
   tfoot.bg-info
     tr
-      td.text-center.fw-bold colspan="4"  Total
+      td.text-center.fw-bold colspan="4" = t(".total")
       td.fw-bold colspan = "2"
         span#total-price
           = total_price.to_s + " $"
 .pb-3.pt-3
-  = link_to "Continue Shopping", root_path, class: "btn btn-primary mr-5"
-  = link_to "Order", "#", class: "btn btn-success"
+  = link_to t(".continue"), root_path, class: "btn btn-primary mr-5"
+  = link_to t(".update"), "#", class: "btn btn-success"

@@ -1,21 +1,26 @@
-h1 Store Categories
-| Please add products to your store #{link_to "adding new products", new_admin_product_path}
-= render 'search_form'
-table.table.table-condensed
-  thead
-    tr
-      td
-        b CODE
-      td
-        b Name
-      td
-        b Price
-      td
-        b Description
-      td
-        b Image
-      td
-        b Modify
-  = render @products
-.paginate 
-  = will_paginate @categories
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    h1  =t("products.index.category")
+    span= t("products.index.content1")
+    span= link_to t("admin.categories.index.add_category"), new_admin_category_path
+    = render 'search_form'
+    table.table.table-condensed
+      thead
+        tr
+          td
+            b= t(".code")
+          td
+            b= t("carts.index.name")
+          td
+            b= t("carts.index.price")
+          td
+            b= t(".description")
+          td
+            b= t("carts.index.image")
+          td
+            b= t("admin.categories.index.modify")
+      = render @products
+    .paginate 
+      = will_paginate @categories

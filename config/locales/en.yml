@@ -1,23 +1,133 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  layouts:
+    header:
+      home: "Home"
+      contact: "Contact"
+      dashboard: "Dashboard"
+      search: "Search..."
+      chart_analysis: "Chart analysis"
+      profit_statistics: "Profit statistics"
+      shipping_analysis: "Shipping analysis"
+    account:
+      cart: "Cart"
+      account: "Account"
+      logout: "Logout"
+      profile: "Profile"
+      settings: "Settings"
+      help: "Help"
+    dashboard:
+      product: "Product"
+      user: "User"
+      category: "Category"
+      order: "Order"
+      chart_analysis: "Chart analysis"
+      profit_statistics: "Profit statistics"
+      shipping_analysis: "Shipping analysis"
+      shipping_management: "Shipping Management"
+    footer:
+      assistant: "Assistant"
+      refund: "100% REFUND"
+      insurance: "Insurance"
+      free_shipping: "FREE SHIPPING"
+      nationwide: "Nationwide"
+      about_me: "ABOUT ME"
+      introduce: "Introduce"
+      delivery_returns: "Delivery - Returns"
+      privacy_policy: "Privacy Policy"
+      contact: "Contact"
+      help: "HELP"
+      shopping_guide: "Shopping Guide"
+      payment_guide: "Payment Guide"
+      trading_account: "Trading Account"
+      connect: "CONNECT WITH US"
+  static_pages:
+    contact:
+      introduction_contact: "If you can't find what you're looking for in the Shop Help Center, then complete this contact form and a support specialist will reach out to you."
+      message: "Message"
+      send: "Send"
+      cancel: "Cancel"
+  password_resets:
+    edit:
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+  sessions:
+    new:
+      login: "Log in"
+      forgot: "Forgot password"
+      remember: "Remember me on this computer"
+      new_user: "New user? "
+      sign_up_now: "Sign up now!"
+  users:
+    form:
+      avatar: "Avatar"
+    user:
+      edit: "Edit | "
+    show:
+      username: "Username: "
+      address: "Address: "
+    new:
+      sign_up: "Sign up"
+      create: "Create my account"
+    edit:
+      save: "Save changes"
+      update_profile: "Update your profile"
+  carts:
+    index:
+      my_cart: "My Cart"
+      name: "Name"
+      image: "Image"
+      price: "Price"
+      quantity: "Quantity"
+      delete: "Delete"
+      total: "Total"
+      continue: "Continue Shopping"
+      update: "Update"
+  products:
+    index:
+      category: "Categories"
+      content1: "Please add categories to your store "
+      content2: "There is no suitable product"
+      add_product: "adding new products"
+    show:
+      rate: "Rate"
+      price: "Price: "
+      status: "Status: "
+      available: "Available"
+      quantity: "Quantity:"
+      add_cart: "Add to cart"
+    form:
+      search_input: "Search ... "
+      price: "Price"
+      from: "From"
+      to: "To"
+      search_btn: "Search!"
+  admin:
+    users:
+      index:
+        type: "Type"
+        action: "Action"
+      user:
+        admin: "Admin"
+    categories:
+      category:
+        all_product: "All products | "
+      index:
+        modify: "Modify"
+        add_category: "adding new category"
+      form:
+        add: "Add"
+      edit:
+        edit_category: "Editing Categories"
+      new:
+        new_category: "New Categories"
+      show:
+        code: "Code"
+        description: "Description"
+        content_category: "There is no suitable product"
+    products:
+      product:
+        confirm: "Do you want to delete the user: "
+      new:
+        new_product: "New Products"
+      edit:
+        edit_product: "Edit Products"
