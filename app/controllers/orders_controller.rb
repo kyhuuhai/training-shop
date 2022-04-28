@@ -3,9 +3,10 @@ class OrdersController < ApplicationController
   def index
     @orders = current_user.orders.paginate(page: params[:page], per_page: 4)
   end
-
+  
   def new
     @cart = current_cart
+    @cart_items = get_line_items_in_cart
     if current_cart.empty?
       flash[:info] = "Your Cart is empty"
       redirect_to root_url
