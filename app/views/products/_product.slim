@@ -1,4 +1,4 @@
-.card
+.card2
   =link_to product, class: "detail mb-15" do
     - if product.images.attached?
         .image 
@@ -12,5 +12,5 @@
   .price
     p = product.price.to_s + " $"
   .description
-    p = product.description
+    p.text = product.description
   =link_to "Add to Cart", add_to_carts_path(id: product.id, quantity: 1), method: :post, class: "btn btn-primary btn-cart"
