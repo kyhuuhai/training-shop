@@ -1,4 +1,15 @@
 $(document).ready(function () {
+  $(document).on('turbolinks:load', function () {
+    $("form").on('submit', function(e){
+      e.preventDefault();
+      let message = $('#message').val();
+      if (message.length > 0) {
+        App.room.speak(message);
+        $('#message').val('')
+      }
+    });
+  })
+
   $(document).on("click", ".add-btn", function () {
     var id = $(this).data("id");
     var value = getValue(id);
