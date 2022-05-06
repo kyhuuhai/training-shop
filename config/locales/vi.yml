@@ -15,6 +15,9 @@ vi:
       profile: "Trang cá nhân"
       settings: "Cài đặt"
       help: "Giúp đỡ"
+      language: "Ngôn ngữ"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
     dashboard:
       product: "Sản phảm"
       user: "Người dùng"

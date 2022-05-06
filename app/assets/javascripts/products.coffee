@@ -48,4 +48,33 @@ $(document).ready ->
     document.querySelector(subtotal_id).innerHTML = subtotal + ' $'
     document.querySelector('#total-price').innerHTML = total.toFixed(1) + ' $'
     return
+  $(document).on 'click', '.btn-update', ->
+    items = $(this).data('items')
+    item_carts = []
+    for item in items
+      id = item.id
+      name = item.name
+      price = getPrice(id)
+      quatity = getValue(id)
+      subtotal = subTotal(price, quatity)
+      total = getValueTotal()
+      item_carts.push({id: id, name: name, price: price, quantity: quatity})
+    #   console.log id
+    #   console.log name
+    #   console.log price
+    #   console.log quatity
+    #   console.log subtotal
+    #   console.log total
+    # console.log item_carts
+    $.ajax
+      url: '/carts/update_cart',
+      type: 'POST',
+      beforeSend: (xhr) ->
+        xhr.setRequestHeader 'X-CSRF-Token', $('meta[name="csrf-token"]').attr('content')
+        return
+      data: {
+        item_carts: item_carts,
+      }
+      typeData: 'json'
+    return
   return

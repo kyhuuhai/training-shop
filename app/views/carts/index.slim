@@ -43,4 +43,4 @@ table.table.table-bordered id="table"
           = total_price.to_s + " $"
 .pb-3.pt-3
   = link_to t(".continue"), root_path, class: "btn btn-primary mr-5"
-  = link_to t(".update"), "#", class: "btn btn-success"
+  = button_tag t(".update"), class: "btn btn-success btn-update", data: { items: @cart_items.map { |item| item[:product][0] } }, method: :post, remote: true

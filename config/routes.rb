@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       collection do
         post "add_to_cart/:id", to: "carts#add_to_cart", as: "add_to"
         delete "remove_from_cart/:id", to: "carts#remove_from_cart", as: "remove_from"
+        post "update_cart", to: "carts#update_cart", as: "update_to"
       end
     end
     resources :account_activations, only: [:edit]

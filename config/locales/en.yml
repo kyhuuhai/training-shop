@@ -15,6 +15,9 @@ en:
       profile: "Profile"
       settings: "Settings"
       help: "Help"
+      language: "Language"
+      english: "English"
+      vietnamese: "Vietnamese"
     dashboard:
       product: "Product"
       user: "User"
