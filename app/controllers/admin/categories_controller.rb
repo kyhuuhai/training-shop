@@ -19,7 +19,7 @@ class Admin::CategoriesController < AdminsController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:success] = "category was successfully created."
+      flash[:success] = "Category was successfully created."
       redirect_to admin_categories_path
     else
       render "new"

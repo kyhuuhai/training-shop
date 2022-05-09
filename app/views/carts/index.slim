@@ -17,7 +17,7 @@ table.table.table-bordered id="table"
             = item[:product][0]["name"]
         td.text-center.w-20
           .product-thumbnail
-            img.img-fluid alt="image-product" src= item[:images][0] 
+            img.img-fluid alt="image-product" src= item[:images][0]
         td.text-center.w-15
           .cart-price id="price-#{item[:product][0]["id"]}"
             = item[:product][0]["price"].to_s + " $"
@@ -43,5 +43,5 @@ table.table.table-bordered id="table"
           = total_price.to_s + " $"
 .pb-3.pt-3
   = link_to t(".continue"), root_path, class: "btn btn-primary mr-5"
-  = button_tag t(".update"), class: "btn btn-success btn-update", data: { items: @cart_items.map { |item| item[:product][0] } }, method: :post, remote: true
-  = link_to "Order", new_order_path, class: "btn btn-success"
+  = button_tag t(".update"), class: "btn btn-success btn-update mr-5", data: { items: @cart_items.map { |item| item[:product][0] } }, method: :post, remote: true
+  = link_to t(".order"), new_order_path, class: "btn btn-success"
