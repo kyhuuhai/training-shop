@@ -1,6 +1,7 @@
 vi:
   layouts:
     header:
+      product: "Sản phảm"
       home: "Trang chủ"
       contact: "Liên hệ"
       dashboard: "Quản lý"
@@ -65,13 +66,15 @@ vi:
     form:
       avatar: "Ảnh đại diện"
     user:
-      edit: "Chỉnh sửa | "
+      edit: "Chỉnh sửa "
     show:
       username: "Tên người dùng: "
       address: "Địa chỉ: "
     new:
       sign_up: "Đăng nhập"
       create: "Tạo tài khoản"
+      do_have_an_account: "Bạn đã có tài khoản?"
+      log_in: "Đăng nhập!"
     edit:
       save: "Lưu"
       update_profile: "Cập nhật hồ sơ của bạn"
@@ -82,10 +85,11 @@ vi:
       image: "Hình ảnh"
       price: "Giá"
       quantity: "Số lượng"
-      delete: "Xóa"
+      delete: "Xóa "
       total: "Tổng"
       continue: "Tiếp tục mua sắm"
       update: "Cập nhập"
+      order: "Đặt hàng"
   products:
     index:
       category: "Danh mục"
@@ -114,7 +118,7 @@ vi:
         admin: "Quản trị viên"
     categories:
       category:
-        all_product: "Tất cả sản phẩm | "
+        all_product: "Tất cả sản phẩm "
       index:
         modify: "Sửa đổi"
         add_category: "thêm danh mục mới"
@@ -135,3 +139,33 @@ vi:
         new_product: "Thêm sản phẩm mới"
       edit:
         edit_product: "Chỉnh sửa sản phẩm"
+  flash:
+    success:
+      activated: "Tài khoản đã được kích hoạt!"
+      added: "Đã thêm "
+      password_reset: "Mật khẩu đã được đặt lại."
+      user_deleted: "Xóa thành công!"
+      profile_update: "Hồ sơ cá nhân đã cập nhật."
+      product_created: "Đã tạo sản phẩm thành công."
+      update: "Updated."
+      payment_method_created: "Created payment method sucessfully."
+    info:
+      empty_cart: "Giỏ hàng của bạn đang trống."
+      add: "Thêm "
+      to_cart: " vào giỏ hàng."
+      deleted: "Đã xóa."
+      removed: "Đã xóa "
+      from_cart: " khỏi giỏ hàng."
+      email_sent: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu."
+      product_not_found: "Không tìm thấy thông tin sản phẩm."
+      signup_success: "Đăng ký thành công."
+    danger:
+      not_admin: "Bạn không thể truy cập."
+      invalid_activation_link: "Liên kết kích hoạt không hợp lệ."
+      email_not_found: "Không tìm thấy địa chỉ email."
+      password_blank: "Mật khẩu không được để trống."
+      user_not_deleted: "Xóa không thành công!"
+      user_not_found: "Không tìm thấy người dùng."
+      payment_method_not_found: "Không tìm thấy thông tin."
+      login_required: "Vui lòng hãy đăng nhập."
+      invalid_login: "Email / mật khẩu không hợp lệ."

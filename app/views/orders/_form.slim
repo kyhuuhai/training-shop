@@ -8,43 +8,50 @@
         - @order.errors.full_messages.each do |message|
           li
             = message
-  table.table.table-bordered id="table"
+  table.table
     thead.bg-primary
       tr
-        th.text-center Name
-        th.text-center Image
-        th.text-center Price
-        th.text-center Quantity
-        th.text-center Total
+        th.text-center Product
+        th.text-center
+        td.text-center Price
+        td.text-center Quantity
+        td.text-center.momey Total
     tbody
       - @cart_items.each do |item|
         tr
-          td.w-30
-            .product-name
-              = item[:product][0]["name"]
           td.text-center.w-20
             .product-thumbnail
               img.img-fluid alt="image-product" src= item[:images][0] 
+          td.w-30
+            .product-name
+              = item[:product][0]["name"]
           td.text-center.w-15
             .cart-price id="price-#{item[:product][0]["id"]}"
               = item[:product][0]["price"].to_s + " $"
           td.text-center.w-15
             p= item[:quantity]
-          td.subtotal
+          td.subtotal.momey
             = subtotal(item).to_s + " $"
     tfoot.bg-info
       tr
-        td.text-center.fw-bold colspan="4"  Total
+        td.text-center.fw-bold colspan="4"  Total:
         td.fw-bold colspan = "2"
-          span#total-price
+          span#total-price.momey
             = total_price.to_s + " $"
   .field
-
     = f.hidden_field :user_id, :value => current_user.id
     = f.label "Address"
-    = f.text_field :address, :value => current_user.address
+    br
+    = f.text_field :address, :value => current_user.address, placeholder: " Specific address", class:"address"
+    br
     = f.label :payment_method
     br
     = f.collection_select :payment_method_id, PaymentMethod.all, :id, :name, class: "custom-select"
   .actions
+    = f.label "Shipping: "
+    .momey  0$
+    br
+    = f.label "Total money:"
+    .momey
+      = total_price.to_s + " $"
     = f.submit 'Order', class: "order-btn"

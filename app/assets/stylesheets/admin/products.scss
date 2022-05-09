@@ -42,3 +42,16 @@ td.image img {
   max-width: 50px; 
   max-height: auto;
 }
+.text{
+  // white-space: nowrap;  
+  overflow: hidden;
+  p{
+    max-width: 300px;
+    text-overflow: ellipsis; 
+  }
+}
+#category_id{
+  width: 15%;
+  padding: 6px 0;
+  margin: 0 15px;
+}
