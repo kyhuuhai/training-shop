@@ -1,6 +1,4 @@
 h1 =t(".category")
-span= t(".content1")
-span= link_to t(".add_product"), new_admin_product_path
 = render 'products/form'
 - if !@products.empty?
   .all_products

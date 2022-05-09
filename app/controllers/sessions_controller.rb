@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
       redirect_to products_path
     else
-      flash.now[:danger] = "Invalid email/password combination"
+      flash.now[:danger] = t("flash.danger.invalid_login")
       render "new"
     end
   end

@@ -1,20 +1,20 @@
-- provide(:title, @user.name)
-.row
-  h2
+.showUser
+  = form_for([@user]) do |f|
     - if @user.avatar.attached?
       .avatar
         = image_tag @user.avatar
     - else
       .avatar
         = gravatar_for @user
-    = @user.name
   br
   .information
     b= t(".username")
     = @user.name
     br
-    b Email: 
-    = @user.email
+    p
+      b Email: 
+      = @user.email
     br
-    b= t(".address")
-    = @user.address
+    p
+      b= t(".address")
+      = @user.address

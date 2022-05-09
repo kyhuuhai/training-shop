@@ -46,25 +46,3 @@ end
   name = "Payment Method #{n + 1}"
   PaymentMethod.create!(name: name)
 end
-
-99.times do |n|
-  user_id = rand(1..99)
-  payment_method_id = rand(1..3)
-  random_date = rand(1..20).days
-  Order.create!(user_id: user_id,
-                payment_method_id: payment_method_id,
-                created_at: Time.zone.now + random_date)
-end
-
-99.times do |n|
-  product_id = rand(1..99)
-  order_id = rand(1..20)
-  quantity = rand(1..5)
-  price = "#{(n + 1) * 100 * quantity}"
-  random_date = rand(1..20).days
-  OrderDetail.create!(product_id: product_id,
-                      order_id: order_id,
-                      quantity: quantity,
-                      price: price,
-                      created_at: Time.now + random_date)
-end

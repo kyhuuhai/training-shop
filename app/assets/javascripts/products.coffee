@@ -59,13 +59,6 @@ $(document).ready ->
       subtotal = subTotal(price, quatity)
       total = getValueTotal()
       item_carts.push({id: id, name: name, price: price, quantity: quatity})
-    #   console.log id
-    #   console.log name
-    #   console.log price
-    #   console.log quatity
-    #   console.log subtotal
-    #   console.log total
-    # console.log item_carts
     $.ajax
       url: '/carts/update_cart',
       type: 'POST',

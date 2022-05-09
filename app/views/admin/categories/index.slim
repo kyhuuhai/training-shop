@@ -1,10 +1,13 @@
+<<<<<<< HEAD
 .row.ml-0
   .col-sm-3.sidebar
     = render "layouts/dashboard"
   .col-sm-9
     h1  =t("products.index.category")
-    span= t("products.index.content1")
-    span= link_to t(".add_category"), new_admin_category_path
+    button.CN.new
+      = link_to new_admin_category_path(@category)
+        i.fa.fa-plus-circle
+        span= t("admin.categories.new.new_category")
     table.table.table-condensed
       thead
         tr
