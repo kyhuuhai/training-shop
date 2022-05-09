@@ -1,6 +1,4 @@
-$(document).ready(function () {
-  // alert("hello");
-});
+$(document).ready(function () {});
 
 let slideIndex = 1;
 showSlides(slideIndex);

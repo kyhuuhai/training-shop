@@ -1,0 +1,11 @@
+tbody
+  tr.order
+    - order.order_details.each do |order_detail|
+      tr.
+        td = order_detail.product.name
+        td = order_detail.price 
+        td = order_detail.quantity
+        - if order.status.nil?
+          td Pending 
+        -else 
+          td Completed 
