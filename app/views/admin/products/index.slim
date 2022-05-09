@@ -3,8 +3,10 @@
     = render "layouts/dashboard"
   .col-sm-9
     h1  =t("products.index.category")
-    span= t("products.index.content1")
-    span= link_to t("admin.categories.index.add_category"), new_admin_category_path
+    button.CN.new
+      = link_to new_admin_product_path(@product)
+        i.fa.fa-plus-circle
+        span= t("products.new.new_product")
     = render 'search_form'
     table.table.table-condensed
       thead

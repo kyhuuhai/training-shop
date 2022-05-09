@@ -20,7 +20,7 @@ class Admin::ProductsController < AdminsController
 
   def update
     if @product.update(product_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = t("flash.success.profile_update")
       redirect_to admin_products_path
     else
       render "edit"
@@ -34,7 +34,7 @@ class Admin::ProductsController < AdminsController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:success] = "Created product sucessfully"
+      flash[:success] = t("flash.success.product_created")
       redirect_to new_admin_product_path
     else
       render "new"
@@ -43,7 +43,7 @@ class Admin::ProductsController < AdminsController
 
   def destroy
     if @product.destroy
-      flash[:info] = "Deleted"
+      flash[:info] = t("flash.info.deleted")
       redirect_to admin_products_path
     end
   end
@@ -53,7 +53,7 @@ class Admin::ProductsController < AdminsController
   def set_product
     @product = Product.find_by_id(params[:id])
     if !@product
-      flash[:info] = "Không tìm thấy thông tin sản phẩm"
+      flash[:info] = t("flash.info.product_not_found")
       redirect_to admin_products_path
     end
   end

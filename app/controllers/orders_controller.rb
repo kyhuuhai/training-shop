@@ -1,14 +1,15 @@
-require 'cart'
+require "cart"
+
 class OrdersController < ApplicationController
   def index
     @orders = current_user.orders.paginate(page: params[:page], per_page: 4)
   end
-  
+
   def new
     @cart = current_cart
     @cart_items = get_line_items_in_cart
     if current_cart.empty?
-      flash[:info] = "Your Cart is empty"
+      flash[:info] = t("flash.info.empty_cart")
       redirect_to root_url
     end
     @order = Order.new
@@ -21,7 +22,7 @@ class OrdersController < ApplicationController
       session[:cart] = nil
       redirect_to carts_path
     else
-      flash[:info] = "Your Cart is empty"
+      flash[:info] = t("flash.info.empty_cart")
       redirect_to root_url
     end
   end
@@ -29,6 +30,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:payment_method_id,:user_id)
+    params.require(:order).permit(:payment_method_id, :user_id)
   end
 end

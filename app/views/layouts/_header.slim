@@ -1,16 +1,11 @@
 nav.navbar.navbar-default.navbar-static-top
-  .container.pt-1
-    .navbar-header
-      a.navbar-brand href="/"
-        b.logo  Shopppi
+  .container
     .navbar.mb-0
       ul.nav.navbar-nav.navbar-right
         li= link_to t(".home"), root_path, class: "active"
+        li= link_to t(".product"), products_path
         li= link_to t(".contact"), contact_path
-        form.navbar-form.navbar-left
-          .form-group
-            input.form-control placeholder=t(".search") type="text" name="search"
-          = link_to "submit", products_path ,class: "btn btn-success"
+        li= render "layouts/language"
         - if logged_in?
           - if current_user.is_admin?
             li.dropdown
@@ -25,4 +20,12 @@ nav.navbar.navbar-default.navbar-static-top
           - else
             li= render "layouts/account"
         - else
+          li
+            a href = login_path
+              span.cart = t(".cart")
+              i.fa.fa-shopping-cart
           li= link_to "Log in", login_path, class: "mr-5"
+    .navbar-header
+      = link_to root_path, class:'navbar-brand'
+        b.logo 
+          | Shopppi
