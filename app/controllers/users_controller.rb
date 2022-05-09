@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to @user
+      flash[:info] = t("flash.info.signup_success")
+      redirect_to root_url
     else
       render "new"
     end
@@ -28,17 +28,11 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = t("flash.success.profile_update")
       redirect_to @user
     else
       render "edit"
     end
-  end
-
-  def destroy
-    @user.destroy
-    flash[:success] = "User deleted"
-    redirect_to admins_url
   end
 
   private
@@ -51,7 +45,7 @@ class UsersController < ApplicationController
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in."
+      flash[:danger] = t("flash.danger.login_required")
       redirect_to login_url
     end
   end
@@ -60,5 +54,9 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     redirect_to(root_url) unless @user
     redirect_to(root_url) unless current_user?(@user)
+  end
+
+  def log_in(user)
+    session[:user_id] = user.id
   end
 end

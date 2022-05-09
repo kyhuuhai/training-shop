@@ -1,0 +1,7 @@
+li.dropdown
+  a.dropdown-toggle data-toggle="dropdown" type="button"
+    = t(".language")
+    b.caret
+  ul.dropdown-menu
+    li= link_to t(".english"), locale:"en"
+    li= link_to t(".vietnamese"), locale:"vi"

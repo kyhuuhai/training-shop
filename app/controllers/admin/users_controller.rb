@@ -10,10 +10,10 @@ class Admin::UsersController < AdminsController
 
   def destroy
     if @user.destroy
-      flash[:success] = "Deleted thành công!"
+      flash[:success] = t("flash.success.user_deleted")
       redirect_to :action => "index"
     else
-      flash[:danger] = "Deleted khong thanh cong!"
+      flash[:danger] = t("flash.danger.user_not_deleted")
       redirect_to :action => "index"
     end
   end
@@ -28,7 +28,7 @@ class Admin::UsersController < AdminsController
   def load_user
     @user = User.find_by(id: params[:id])
     return if @user.present?
-    flash[:danger] = "Không tìm thấy user"
+    flash[:danger] = t("flash.danger.user_not_found")
     redirect_to root_url
   end
 end
