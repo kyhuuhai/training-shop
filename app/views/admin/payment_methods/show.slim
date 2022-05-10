@@ -1,0 +1,13 @@
+- if @payment_methods.present?
+  table.table.table-condensed
+    thead
+      tr
+        td
+          b Name
+        td
+          b Modify
+    = render @payment_methods
+- else 
+  p There is no suitable payment method
+.paginate 
+  = will_paginate @payment_methods

@@ -1,0 +1,4 @@
+= form_for([:admin, @category]) do |f|
+  = f.label :name, t("carts.index.name")
+  = f.text_field :name, class: 'form-control'
+  = f.submit t(".add"), class: "btn btn-primary mt-3"

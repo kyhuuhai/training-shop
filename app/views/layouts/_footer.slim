@@ -1,0 +1,61 @@
+footer
+  .footer-top
+    .row
+      .col-md-4
+        .flex-container
+          .item
+            i.fa.fa-question-circle.fa-2x
+          h6 24/7
+          p = t(".assistant")
+      .col-md-4
+        .flex-container
+          .item
+            i.fa.fa-money.fa-2x
+          h6 = t(".refund")
+          p = t(".insurance")
+      .col-md-4
+        .flex-container
+          .item
+            i.fa.fa-truck.fa-2x
+          h6 = t(".free_shipping")
+          p = t(".nationwide")
+  .footer-middle
+    .row
+      .col-md-4
+        .footer-detail
+          h6 = t(".about_me")
+          ul
+            li= link_to t(".introduce"), "#"
+            li= link_to t(".delivery_returns"), "#"
+            li= link_to t(".privacy_policy"), "#"
+            li= link_to t(".contact"), "#"
+      .col-md-4
+        .footer-detail
+          h6 TRỢ GIÚP
+          ul              
+            li= link_to t(".shopping_guide"), "#"
+            li= link_to t(".payment_guide"), "#"
+            li= link_to t(".trading_account"), "#"
+      .col-md-4
+        .footer-detail
+          h6 =t(".connect")
+          ul
+            li
+              a href="#" 
+                i.fa.fa-facebook-square.fa-2x
+                span Facebook
+            li
+              a href="#" 
+                i.fa.fa-google-plus-square.fa-2x
+                span Google Plus
+            li
+              a href="#" 
+                i.fa.fa-twitter-square.fa-2x
+                span Twitter
+  .footer-bottom
+    .row
+      .col-md-6
+        p.center Copyright ©  #{ Date.current.year }  Shopppi.
+      .col-md-6.center
+          i.fa.fa-cc-mastercard.fa-2x.mr-5
+          i.fa.fa-cc-visa.fa-2x

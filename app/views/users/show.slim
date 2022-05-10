@@ -1,0 +1,20 @@
+.showUser
+  = form_for([@user]) do |f|
+    - if @user.avatar.attached?
+      .avatar
+        = image_tag @user.avatar
+    - else
+      .avatar
+        = gravatar_for @user
+  br
+  .information
+    b= t(".username")
+    = @user.name
+    br
+    p
+      b Email: 
+      = @user.email
+    br
+    p
+      b= t(".address")
+      = @user.address

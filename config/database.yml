@@ -2,8 +2,8 @@ default: &default
   adapter: postgresql
   host: 127.0.0.1
   pool: 5
-  username: root
-  password: password
+  username: postgres
+  password: root
   reconnect: false
   encoding: utf8
 
@@ -14,4 +14,3 @@ development:
 test:
   <<: *default
   database: shop_test
-
