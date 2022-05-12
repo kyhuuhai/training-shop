@@ -1,0 +1,14 @@
+table.table.table-condensed
+  thead
+    tr
+      td
+        b= t("carts.index.name")
+      td
+        b= t("carts.index.price")
+      td
+        b= t("carts.index.quantity")
+      td
+        b= t("orders.index.status")
+  = render @orders
+.paginate 
+  = will_paginate @orders

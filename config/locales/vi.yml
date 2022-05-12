@@ -1,0 +1,195 @@
+vi:
+  layouts:
+    header:
+      home: "Trang chủ"
+      contact: "Liên hệ"
+      dashboard: "Quản lý"
+      search: "Tìm kiếm..."
+      chart_analysis: "Biểu đồ phân tích"
+      profit_statistics: "Thống kê lợi nhuận"
+      shipping_analysis: "Thống kê vận chuyển"
+    account:
+      cart: "Giỏ hàng"
+      account: "Tài khoản"
+      logout: "Đăng xuất"
+      profile: "Trang cá nhân"
+      settings: "Cài đặt"
+      help: "Giúp đỡ"
+      history: "Lịch sử mua hàng"
+      language: "Ngôn ngữ"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
+    dashboard:
+      product: "Sản phảm"
+      user: "Người dùng"
+      category: "Danh mục"
+      order: "Đơn hàng"
+      chart_analysis: "Biểu đồ phân tích"
+      profit_statistics: "Thống kê lợi nhuận"
+      shipping_analysis: "Thống kê vận chuyển"
+      shipping_management: "Quản lý giao hàng"
+    footer:
+      assistant: "Hỗ trợ miễn phí"
+      refund: "100% HOÀN TIỀN"
+      insurance: "Bảo hành"
+      free_shipping: "MIỄN PHÍ SHIPPING"
+      nationwide: "Toàn quốc"
+      about_me: "VỀ CHÚNG TÔI"
+      introduce: "Giới thiệu"
+      delivery_returns: "Giao hàng - Đổi trả"
+      privacy_policy: "Chính sách bảo mật"
+      contact: "Liên hệ"
+      help: "TRỢ GIÚP"
+      shopping_guide: "Hướng dẫn mua hàng"
+      payment_guide: "Hướng dẫn thanh toán"
+      trading_account: "Tài khoản giao dịch"
+      connect: "KẾT NỐI VỚI CHÚNG TÔI"
+  static_pages:
+    contact:
+      introduction_contact: "Nếu bạn không thể tìm thấy những gì bạn đang tìm kiếm trong Trung tâm trợ giúp của Shop, hãy hoàn thành biểu mẫu liên hệ này và chuyên gia hỗ trợ sẽ liên hệ với bạn."
+      message: "Tin nhắn"
+      send: "Gửi"
+      cancel: "Hủy"
+  password_resets:
+    edit:
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      forgot: "Quên mật khẩu"
+      remember: "Ghi nhớ tài khoản trên máy tính này"
+      new_user: "Bạn là người dùng mới? "
+      sign_up_now: "Đăng kí ngay!"
+  users:
+    form:
+      avatar: "Ảnh đại diện"
+    user:
+      edit: "Chỉnh sửa | "
+    show:
+      username: "Tên người dùng: "
+      address: "Địa chỉ: "
+    new:
+      sign_up: "Đăng nhập"
+      create: "Tạo tài khoản"
+    edit:
+      save: "Lưu"
+      update_profile: "Cập nhật hồ sơ của bạn"
+  carts:
+    index:
+      my_cart: "Giỏ hàng của tôi"
+      name: "Tên"
+      image: "Hình ảnh"
+      price: "Giá"
+      quantity: "Số lượng"
+      delete: "Xóa"
+      total: "Tổng"
+      continue: "Tiếp tục mua sắm"
+      update: "Cập nhập"
+      order: "Đặt hàng"
+  products:
+    index:
+      category: "Danh mục"
+      content1: "Vui lòng thêm danh mục của bạn để  "
+      content2: "Không có sản phẩm phù hợp"
+      add_product: "thêm sản phẩm mới"
+    show:
+      rate: "Đánh giá"
+      price: "Giá bán: "
+      status: "Tình trạng: "
+      available: "Còn hàng"
+      quantity: "Số lượng:"
+      add_cart: "Thêm vào giỏ hàng"
+    form:
+      search_input: "Tìm kiếm ... "
+      price: "Giá"
+      from: "Từ"
+      to: "Đến"
+      search_btn: "Tìm kiếm!"
+  admin:
+    users:
+      index:
+        type: "Loại"
+        action: "Chức năng"
+      user:
+        admin: "Quản trị viên"
+        confirm: "Bạn có muốn xóa người dùng: "
+    categories:
+      category:
+        all_product: "Tất cả sản phẩm | "
+      index:
+        modify: "Sửa đổi"
+        add_category: "thêm danh mục mới"
+      form:
+        add: "Thêm"
+      edit:
+        edit_category: "Chỉnh sửa danh mục"
+      new:
+        new_category: "Danh mục mới"
+      show:
+        code: "Mã"
+        description: "Mô tả"
+        content_category: "Không có sản phẩm phù hợp"
+    products:
+      product:
+        confirm: "Bạn có muốn xóa sản phẩm: "
+      new:
+        new_product: "Thêm sản phẩm mới"
+      edit:
+        edit_product: "Chỉnh sửa sản phẩm"
+    payment_methods:
+      form:
+        payment_method_name: "Tên phương thức thanh toán: "
+      edit:
+        title: "Chỉnh sửa Phương thức Thanh toán"
+      index:
+        title: "Phương thức thanh toán tại cửa hàng"
+        description: "Vui lòng thêm Phương thức thanh toán vào cửa hàng của bạn"
+        add_payment_method: "thêm phương thức thanh toán mới."
+      new:
+        title: "Phương thức thanh toán mới"
+      show:
+        no_payment_method: "Không có phương thức thanh toán phù hợp."
+    charts:
+      profit:
+        order_chart_title: "Đơn hàng theo ngày"
+        product_chart_title: "Sản phẩm theo ngày"
+        order_detail_chart_title: "Chi tiết đơn hàng theo ngày"
+  orders:
+    form:
+      payment_method: "Phương thức thanh toán:"
+    order:
+      pending: "Đang chờ xử lý"
+      completed: "Đã hoàn thành"
+    index:
+      status: "Trạng thái"
+  flash:
+    success:
+      activated: "Tài khoản đã được kích hoạt!"
+      added: "Đã thêm "
+      password_reset: "Mật khẩu đã được đặt lại."
+      user_deleted: "Xóa thành công!"
+      profile_update: "Hồ sơ cá nhân đã cập nhật."
+      product_created: "Đã tạo sản phẩm thành công."
+      update: "Updated."
+      payment_method_created: "Created payment method sucessfully."
+    info:
+      empty_cart: "Giỏ hàng của bạn đang trống."
+      add: "Thêm "
+      to_cart: " vào giỏ hàng."
+      deleted: "Đã xóa."
+      removed: "Đã xóa "
+      from_cart: " khỏi giỏ hàng."
+      email_sent: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu."
+      product_not_found: "Không tìm thấy thông tin sản phẩm."
+      signup_success: "Đăng ký thành công."
+    danger:
+      not_admin: "Bạn không thể truy cập."
+      invalid_activation_link: "Liên kết kích hoạt không hợp lệ."
+      email_not_found: "Không tìm thấy địa chỉ email."
+      password_blank: "Mật khẩu không được để trống."
+      user_not_deleted: "Xóa không thành công!"
+      user_not_found: "Không tìm thấy người dùng."
+      payment_method_not_found: "Không tìm thấy thông tin."
+      login_required: "Vui lòng hãy đăng nhập."
+      invalid_login: "Email / mật khẩu không hợp lệ."
