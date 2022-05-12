@@ -1,13 +1,13 @@
 module CartsHelper
   def current_cart
-    session[:cart] ||= Array.new
+    session[:cart] ||= []
   end
 
   def find_product_in_cart(product)
     current_cart.find { |item| item["product_id"] == product.id }
   end
 
-  def get_line_items_in_cart
+  def load_line_items_in_cart
     cart_items = []
     current_cart.each do |item|
       product = Product.find_by_id(item["product_id"])

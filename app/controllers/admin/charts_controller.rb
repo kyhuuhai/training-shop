@@ -1,4 +1,5 @@
-class Admin::ChartsController < ApplicationController
-  def profit
+module Admin
+  class ChartsController < ApplicationController
+    def profit; end
   end
 end
