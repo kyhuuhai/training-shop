@@ -1,0 +1,13 @@
+- if @payment_methods.present?
+  table.table.table-condensed
+    thead
+      tr
+        td
+          b= t("carts.index.name")
+        td
+          b= t("categories.index.modify")
+    = render @payment_methods
+- else 
+  p= t("payment_methods.show.no_payment_method")
+.paginate 
+  = will_paginate @payment_methods

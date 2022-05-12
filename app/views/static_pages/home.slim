@@ -1,0 +1,12 @@
+- if logged_in? 
+  - if current_user.is_admin?
+    .container-fluid
+      .row
+        .col-sm-3.sidebar
+          = render "layouts/dashboard"
+        .col-sm-9
+          = render "static_pages/product"
+  - else
+    = render "static_pages/product"
+- else
+  = render "static_pages/product"
