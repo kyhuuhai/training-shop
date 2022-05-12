@@ -113,6 +113,7 @@ en:
         action: "Action"
       user:
         admin: "Admin"
+        confirm: "Do you want to delete the user: "
     categories:
       category:
         all_product: "All products | "
@@ -131,11 +132,37 @@ en:
         content_category: "There is no suitable product"
     products:
       product:
-        confirm: "Do you want to delete the user: "
+        confirm: "Do you want to delete the product: "
       new:
         new_product: "New Products"
       edit:
         edit_product: "Edit Products"
+    payment_methods:
+      form:
+        payment_method_name: "Payment method name: "
+      edit:
+        title: "Editing Payment Method"
+      index:
+        title: "Store Payment Method"
+        description: "Please add Payment Method to your store"
+        add_payment_method: "adding new payment method"
+      new:
+        title: "New Payment Method"
+      show:
+        no_payment_method: "There is no suitable payment method."
+    charts:
+      profit:
+        order_chart_title: "Orders by day"
+        product_chart_title: "Products by day"
+        order_detail_chart_title: "Order details by day"
+  orders:
+    form:
+      payment_method: "Payment method:"
+    order:
+      pending: "Pending"
+      completed: "Completed"
+    index:
+      status: "Status"
   flash:
     success:
       activated: "Account activated!"

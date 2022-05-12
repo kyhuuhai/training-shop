@@ -113,6 +113,7 @@ vi:
         action: "Chức năng"
       user:
         admin: "Quản trị viên"
+        confirm: "Bạn có muốn xóa người dùng: "
     categories:
       category:
         all_product: "Tất cả sản phẩm | "
@@ -131,11 +132,37 @@ vi:
         content_category: "Không có sản phẩm phù hợp"
     products:
       product:
-        confirm: "Bạn có muốn xóa người dùng: "
+        confirm: "Bạn có muốn xóa sản phẩm: "
       new:
         new_product: "Thêm sản phẩm mới"
       edit:
         edit_product: "Chỉnh sửa sản phẩm"
+    payment_methods:
+      form:
+        payment_method_name: "Tên phương thức thanh toán: "
+      edit:
+        title: "Chỉnh sửa Phương thức Thanh toán"
+      index:
+        title: "Phương thức thanh toán tại cửa hàng"
+        description: "Vui lòng thêm Phương thức thanh toán vào cửa hàng của bạn"
+        add_payment_method: "thêm phương thức thanh toán mới."
+      new:
+        title: "Phương thức thanh toán mới"
+      show:
+        no_payment_method: "Không có phương thức thanh toán phù hợp."
+    charts:
+      profit:
+        order_chart_title: "Đơn hàng theo ngày"
+        product_chart_title: "Sản phẩm theo ngày"
+        order_detail_chart_title: "Chi tiết đơn hàng theo ngày"
+  orders:
+    form:
+      payment_method: "Phương thức thanh toán:"
+    order:
+      pending: "Đang chờ xử lý"
+      completed: "Đã hoàn thành"
+    index:
+      status: "Trạng thái"
   flash:
     success:
       activated: "Tài khoản đã được kích hoạt!"

@@ -1,4 +1,4 @@
 = form_for([:admin, @payment_method]) do |f|
-  = f.label :name
+  = f.label :name, t("payment_methods.form.payment_method_name")
   = f.text_field :name, class: 'form-control'
-  = f.submit "Add", class: "btn btn-primary mt-3"
+  = f.submit t("categories.form.add"), class: "btn btn-primary mt-3"
