@@ -10,7 +10,7 @@ module CartsHelper
   def get_line_items_in_cart
     cart_items = []
     current_cart.each do |item|
-      product = Product.where(id: item["product_id"]).includes(:order_detail)
+      product = Product.find_by_id(item["product_id"])
       if product
         cart_items << { product: product, quantity: item["quantity"], images: item["images"] }
       else
@@ -21,11 +21,11 @@ module CartsHelper
   end
 
   def subtotal(item)
-    item[:product][0]["price"] * item[:quantity]
+    item[:product].price * item[:quantity]
   end
 
   def total_price
     items = get_line_items_in_cart
-    items.reduce(0) { |a, e| a + e[:product][0]["price"] * e[:quantity] }
+    items.reduce(0) { |a, e| a + e[:product].price * e[:quantity] }
   end
 end

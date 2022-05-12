@@ -86,6 +86,7 @@ vi:
       total: "Tổng"
       continue: "Tiếp tục mua sắm"
       update: "Cập nhập"
+      order: "Đặt hàng"
   products:
     index:
       category: "Danh mục"
@@ -112,6 +113,7 @@ vi:
         action: "Chức năng"
       user:
         admin: "Quản trị viên"
+        confirm: "Bạn có muốn xóa người dùng: "
     categories:
       category:
         all_product: "Tất cả sản phẩm | "
@@ -130,8 +132,64 @@ vi:
         content_category: "Không có sản phẩm phù hợp"
     products:
       product:
-        confirm: "Bạn có muốn xóa người dùng: "
+        confirm: "Bạn có muốn xóa sản phẩm: "
       new:
         new_product: "Thêm sản phẩm mới"
       edit:
         edit_product: "Chỉnh sửa sản phẩm"
+    payment_methods:
+      form:
+        payment_method_name: "Tên phương thức thanh toán: "
+      edit:
+        title: "Chỉnh sửa Phương thức Thanh toán"
+      index:
+        title: "Phương thức thanh toán tại cửa hàng"
+        description: "Vui lòng thêm Phương thức thanh toán vào cửa hàng của bạn"
+        add_payment_method: "thêm phương thức thanh toán mới."
+      new:
+        title: "Phương thức thanh toán mới"
+      show:
+        no_payment_method: "Không có phương thức thanh toán phù hợp."
+    charts:
+      profit:
+        order_chart_title: "Đơn hàng theo ngày"
+        product_chart_title: "Sản phẩm theo ngày"
+        order_detail_chart_title: "Chi tiết đơn hàng theo ngày"
+  orders:
+    form:
+      payment_method: "Phương thức thanh toán:"
+    order:
+      pending: "Đang chờ xử lý"
+      completed: "Đã hoàn thành"
+    index:
+      status: "Trạng thái"
+  flash:
+    success:
+      activated: "Tài khoản đã được kích hoạt!"
+      added: "Đã thêm "
+      password_reset: "Mật khẩu đã được đặt lại."
+      user_deleted: "Xóa thành công!"
+      profile_update: "Hồ sơ cá nhân đã cập nhật."
+      product_created: "Đã tạo sản phẩm thành công."
+      update: "Updated."
+      payment_method_created: "Created payment method sucessfully."
+    info:
+      empty_cart: "Giỏ hàng của bạn đang trống."
+      add: "Thêm "
+      to_cart: " vào giỏ hàng."
+      deleted: "Đã xóa."
+      removed: "Đã xóa "
+      from_cart: " khỏi giỏ hàng."
+      email_sent: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu."
+      product_not_found: "Không tìm thấy thông tin sản phẩm."
+      signup_success: "Đăng ký thành công."
+    danger:
+      not_admin: "Bạn không thể truy cập."
+      invalid_activation_link: "Liên kết kích hoạt không hợp lệ."
+      email_not_found: "Không tìm thấy địa chỉ email."
+      password_blank: "Mật khẩu không được để trống."
+      user_not_deleted: "Xóa không thành công!"
+      user_not_found: "Không tìm thấy người dùng."
+      payment_method_not_found: "Không tìm thấy thông tin."
+      login_required: "Vui lòng hãy đăng nhập."
+      invalid_login: "Email / mật khẩu không hợp lệ."

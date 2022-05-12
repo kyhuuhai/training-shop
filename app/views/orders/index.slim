@@ -2,13 +2,13 @@ table.table.table-condensed
   thead
     tr
       td
-        b Name
+        b= t("carts.index.name")
       td
-        b Price
+        b= t("carts.index.price")
       td
-        b Quantity
+        b= t("carts.index.quantity")
       td
-        b Status
+        b= t("orders.index.status")
   = render @orders
 .paginate 
   = will_paginate @orders

@@ -24,5 +24,5 @@ table.table.table-bordered
           i.fa.fa-info-circle
       button.CN.delete
         = link_to admin_user_path(user) , method: :delete,
-                                data: { confirm: "Bạn có muốn xóa user: "+user.name }
+                                data: { confirm: t("admin.users.user.confirm") + user.name }
           i.fa.fa-trash-o

@@ -1,4 +1,5 @@
-require 'cart.rb'
+require "cart.rb"
+
 class CartsController < ApplicationController
   before_action :check_empty_cart, only: [:index, :remove_from_cart]
   before_action :get_line_item, only: [:add_to_cart, :remove_from_cart]
@@ -11,14 +12,14 @@ class CartsController < ApplicationController
   def add_to_cart
     if @item
       @item["quantity"] += params[:quantity].to_i
-      flash[:info] = "Added #{params[:quantity]} #{@product.name} to cart."
+      flash[:info] = t("flash.info.add") + "#{params[:quantity]} #{@product.name}" + t("flash.info.to_cart")
     else
       images = []
       @product.images.each do |img|
         images << url_for(img)
       end
-      current_cart << { product_id: @product.id, name: @product.name, price: @product.price, quantity: params[:quantity].to_i, images: images}
-      flash[:success] = "Added #{params[:quantity]} #{@product.name}  to cart."
+      current_cart << { product_id: @product.id, name: @product.name, price: @product.price, quantity: params[:quantity].to_i, images: images }
+      flash[:success] = t("flash.success.added") + "#{params[:quantity]} #{@product.name}" + t("flash.info.to_cart")
     end
     session[:cart] = current_cart
     redirect_to root_path
@@ -26,7 +27,7 @@ class CartsController < ApplicationController
 
   def remove_from_cart
     if @item
-      flash[:info] = "Removed #{@item["quantity"]} #{@item["name"]} from cart."
+      flash[:info] = t("flash.info.removed") + "#{@item["quantity"]} #{@item["name"]}" + t("flash.info.from_cart")
       current_cart.delete(@item)
       session[:cart] = current_cart
       redirect_to carts_path
@@ -48,7 +49,7 @@ class CartsController < ApplicationController
   def check_empty_cart
     if session[:cart].nil?
       redirect_to root_path
-      flash[:info] = "Cart is empty."
+      flash[:info] = t("flash.info.empty_cart")
     end
   end
 

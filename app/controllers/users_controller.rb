@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:info] = "Sign Up Success."
+      flash[:info] = t("flash.info.signup_success")
       redirect_to root_url
     else
       render "new"
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = t("flash.success.profile_update")
       redirect_to @user
     else
       render "edit"
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in."
+      flash[:danger] = t("flash.danger.login_required")
       redirect_to login_url
     end
   end
