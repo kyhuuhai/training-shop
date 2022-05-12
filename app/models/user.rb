@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :rates
   has_many :comments
   has_many :orders
+  has_many :messages
+  has_many :rooms
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
