@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      Cart::add_order_details(current_cart, @order.id)
+      Cart.add_order_details(current_cart, @order.id)
       session[:cart] = nil
       redirect_to carts_path
     else

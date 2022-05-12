@@ -1,11 +1,11 @@
 class AdminsController < ApplicationController
-  before_action :is_admin
+  before_action :admin?
 
-  def is_admin
-    unless current_user.is_admin?
-      flash[:danger] = t("flash.danger.not_admin")
-      redirect_to root_url
-    end
+  def admin?
+    return if current_user.is_admin?
+
+    flash[:danger] = t("flash.danger.not_admin")
+    redirect_to root_url
   end
 
   def show

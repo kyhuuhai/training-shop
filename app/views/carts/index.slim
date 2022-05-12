@@ -31,7 +31,7 @@ table.table.table-bordered id="table"
             = f.text_field "quantity", value: item[:quantity], class: "text-center form-control number-input cart-quantity", id: "cart_#{item[:product].id}"
             = f.button "Add", class: "btn btn-default add-btn", data: { id: "#{item[:product].id}" }, type: "button" do
               i.fa.fa-plus
-        td
+        td.w-15
           .fw-bold.cart-subtotal id="subtotal-#{item[:product].id}"
             = subtotal(item).to_s + " $"
         td.text-center.btn-action
