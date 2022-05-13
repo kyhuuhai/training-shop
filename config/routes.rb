@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       resources :categories
       resources :products
       resources :users
+      resources :orders
+      resources :rooms
+      resources :payment_methods
       get "/profit", to: "charts#profit"
     end
 

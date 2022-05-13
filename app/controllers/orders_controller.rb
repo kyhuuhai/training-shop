@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
   def new
     @cart = current_cart
-    @cart_items = get_line_items_in_cart
+    @cart_items = load_line_items_in_cart
     if current_cart.empty?
       flash[:info] = t("flash.info.empty_cart")
       redirect_to root_url
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      Cart::add_order_details(current_cart, @order.id)
+      Cart.add_order_details(current_cart, @order.id)
       session[:cart] = nil
       redirect_to carts_path
     else

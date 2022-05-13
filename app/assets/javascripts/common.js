@@ -8,7 +8,10 @@ $(document).ready(function() {
         $("#user_id").val(),
         $("#messages").attr("room_id")
       );
+      sessionStorage.setItem('user_id', $("#user_id").val())
       event.target.value = '';
+      var chatHistory = document.getElementById("messages");
+      chatHistory.scrollTop = chatHistory.scrollHeight;
       return event.preventDefault();
     }
   });

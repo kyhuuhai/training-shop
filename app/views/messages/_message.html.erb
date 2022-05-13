@@ -1,21 +1,13 @@
-<div class = "message">
-  <% if message.user_id == current_user.id %>
-    <div class="outgoing_msg">
-      <div class="sent_msg">
-        <% unless message.content.blank? %>
-          <p><%= message.content %></p>
-        <% end %>
-        <span class="time_date"><%= time_ago_in_words message.created_at %> ago</span>
-      </div>
-    </div>
-    <% else %>
-      <div class="ingoing_msg">
-        <div class="received_msg">
-          <% unless message.content.blank? %>
-            <p><%= message.content %></p>
-          <% end %>
-          <span class="time_date"><%= time_ago_in_words message.created_at %> ago</span>
-        </div>
-      </div>
+<% if message.user_id == current_user.id %>
+  <div class="sent_msg talk-bubble round">
+    <% unless message.content.blank? %>
+      <p><%= message.content %></p>
     <% end %>
-</div>
+  </div>
+<% else %>
+  <div class="received_msg talk-bubble round">
+    <% unless message.content.blank? %>
+      <p><%= message.content %></p>
+    <% end %>
+  </div>
+<% end %>

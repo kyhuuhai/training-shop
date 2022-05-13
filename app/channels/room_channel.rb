@@ -11,6 +11,9 @@ class RoomChannel < ApplicationCable::Channel
     Message.create! content: data["message"],
                     user_id: data["user_id"],
                     room_id: data["room_id"]
-    ActionCable.server.broadcast "room_#{params[:room_id]}_channel", message: data["message"], user_id: data["user_id"], room_id: data["room_id"]
+    ActionCable.server.broadcast "room_#{params[:room_id]}_channel",
+                                 message: data["message"],
+                                 user_id: data["user_id"],
+                                 room_id: data["room_id"]
   end
 end

@@ -6,6 +6,6 @@ tbody
         td = order_detail.unit_price 
         td = order_detail.quantity
         - if order.status.nil?
-          td Pending 
+          td= t("orders.order.pending")
         -else 
-          td Completed 
+          td= t("orders.order.completed")

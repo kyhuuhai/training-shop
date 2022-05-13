@@ -12,3 +12,4 @@ li.dropdown.navbar-right
     li= link_to t(".help"), help_path
     li= link_to t(".history"), orders_path
     li= link_to t(".logout"), logout_path, method: :delete
+    li= link_to t(".shipping_management"), room_path(current_user.room.id)

@@ -2,5 +2,5 @@ tbody
   tr
     td= payment_method.name
     td
-      = link_to "Edit |", edit_admin_payment_method_path(payment_method)
-      = link_to "Delete |", admin_payment_method_path(payment_method), method: :delete
+      = link_to t("users.user.edit"), edit_admin_payment_method_path(payment_method)
+      = link_to t("carts.index.delete"), admin_payment_method_path(payment_method), method: :delete

@@ -13,8 +13,8 @@ end
 
 99.times do |n|
   name = Faker::Name.name
-  code = "#{n + 1}"
-  price = "#{(n + 1) * 100}"
+  code = "#{n + 1}.to_s"
+  price = "#{(n + 1) * 100}.to_s"
   description = Faker::Lorem.sentence(5)
   if n % 2 == 1
     category = "1"
