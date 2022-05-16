@@ -9,7 +9,7 @@ vi:
       profit_statistics: "Thống kê lợi nhuận"
       shipping_analysis: "Thống kê vận chuyển"
     account:
-      cart: "Giỏ hàng"
+      cart: "Giỏ hàng "
       account: "Tài khoản"
       logout: "Đăng xuất"
       profile: "Trang cá nhân"
@@ -69,6 +69,7 @@ vi:
     show:
       username: "Tên người dùng: "
       address: "Địa chỉ: "
+      phone: "Điện thoại: "
     new:
       sign_up: "Đăng nhập"
       create: "Tạo tài khoản"
@@ -87,6 +88,7 @@ vi:
       continue: "Tiếp tục mua sắm"
       update: "Cập nhập"
       order: "Đặt hàng"
+      info: "Thông tin"
   products:
     index:
       category: "Danh mục"
@@ -158,11 +160,13 @@ vi:
   orders:
     form:
       payment_method: "Phương thức thanh toán:"
+      name: "Tên: "
     order:
       pending: "Đang chờ xử lý"
       completed: "Đã hoàn thành"
     index:
       status: "Trạng thái"
+      unit_price: "Đơn giá"
   flash:
     success:
       activated: "Tài khoản đã được kích hoạt!"

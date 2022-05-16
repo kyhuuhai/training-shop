@@ -9,7 +9,7 @@ en:
       profit_statistics: "Profit statistics"
       shipping_analysis: "Shipping analysis"
     account:
-      cart: "Cart"
+      cart: "Cart "
       account: "Account"
       logout: "Logout"
       profile: "Profile"
@@ -67,8 +67,9 @@ en:
     user:
       edit: "Edit | "
     show:
-      username: "Username: "
+      username: "User name: "
       address: "Address: "
+      phone: "Phone: "
     new:
       sign_up: "Sign up"
       create: "Create my account"
@@ -87,6 +88,7 @@ en:
       continue: "Continue Shopping"
       update: "Update"
       order: "Order"
+      info: "Infomation"
   products:
     index:
       category: "Categories"
@@ -158,11 +160,13 @@ en:
   orders:
     form:
       payment_method: "Payment method:"
+      name: "Name: "
     order:
       pending: "Pending"
       completed: "Completed"
     index:
       status: "Status"
+      unit_price: "Unit price"
   flash:
     success:
       activated: "Account activated!"
