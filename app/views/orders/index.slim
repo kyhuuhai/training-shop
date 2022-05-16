@@ -9,6 +9,8 @@ table.table.table-condensed
         b= t("carts.index.quantity")
       td
         b= t("orders.index.status")
+      td
+        b= t("orders.index.action")
   = render @orders
 .paginate 
   = will_paginate @orders

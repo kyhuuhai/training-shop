@@ -1,13 +1,16 @@
-h1= t("payment_methods.index.title")
-span= t("payment_methods.index.description")
-span= link_to t("payment_methods.index.add_payment_method"), new_admin_payment_method_path
-table.table.table-condensed
-  thead
-    tr
-      td
-        b= t("carts.index.name")
-      td
-        b= t("categories.index.modify")
-  = render @payment_methods
-.paginate 
-  = will_paginate @payment_methods
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    h1= t("payment_methods.index.title")
+    span= link_to t("payment_methods.index.add_payment_method"), new_admin_payment_method_path
+    table.table.table-condensed
+      thead
+        tr
+          td
+            b= t("carts.index.name")
+          td
+            b= t("categories.index.modify")
+      = render @payment_methods
+    .paginate 
+      = will_paginate @payment_methods

@@ -9,10 +9,10 @@ tbody
           td= t("orders.order.pending")
         -else 
           td= t("orders.order.completed")
-        td 
-          = link_to t("carts.index.delete"), order_path(order), method: :delete
-          i.fa.fa-trash-o
   tr 
+    td 
+      | Customer:   
+      = order.user.name
     td 
       | total:    
       = order.total   

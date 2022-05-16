@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    mount ActionCable.server => "/cable"
     root "static_pages#home"
     get "/help", to: "static_pages#help"
     get "/contact", to: "static_pages#contact"
@@ -12,11 +13,15 @@ Rails.application.routes.draw do
     resources :products
     resources :users
     resources :orders
+    resources :rooms
 
     namespace :admin do
       resources :categories
       resources :products
       resources :users
+      resources :orders
+      resources :rooms
+      resources :payment_methods
       get "/profit", to: "charts#profit"
     end
 

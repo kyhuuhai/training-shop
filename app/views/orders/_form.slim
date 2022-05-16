@@ -43,6 +43,7 @@
             = total_price.to_s + " $"
   .field
     = f.hidden_field :user_id, :value => current_user.id
+    = f.hidden_field :total, :value => total_price
     = f.label "Address", t("users.show.address")
     = f.text_field :address, :value => current_user.address
     = f.label :payment_method, t("orders.form.payment_method")
