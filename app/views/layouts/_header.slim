@@ -2,24 +2,28 @@ nav.navbar.navbar-default.navbar-static-top
   .container
     .navbar.mb-0
       ul.nav.navbar-nav.navbar-right
-        li= link_to t(".home"), root_path, class: "active"
-        li= link_to t(".contact"), contact_path
+        li= link_to t("layouts.header.home"), root_path, class: "active"
+        li= link_to t("layouts.header.contact"), contact_path
         li= render "layouts/language"
+        li
+          a href = carts_path
+            span.cart = t("layouts.account.cart") 
+            i.fa.fa-shopping-cart
         - if logged_in?
           - if current_user.is_admin?
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" type="button"
-                = t(".dashboard")
+                = t("layouts.header.dashboard")
                 b.caret
               ul.dropdown-menu
-                li= link_to t(".chart_analysis"), "#"
-                li= link_to t(".profit_statistics"), admin_profit_path
-                li= link_to t(".shipping_analysis"), "#"
+                li= link_to t("layouts.header.chart_analysis"), "#"
+                li= link_to t("layouts.header.profit_statistics"), admin_profit_path
+                li= link_to t("layouts.header.shipping_analysis"), "#"
             li= render "layouts/account"
           - else
             li= render "layouts/account"
         - else
-          li= link_to "Log in", login_path, class: "mr-5"
+          li= link_to t("sessions.new.login"), login_path, class: "mr-5"
     .navbar-header
       = link_to root_path, class:'navbar-brand'
         b.logo 

@@ -25,7 +25,7 @@ module CartsHelper
   end
 
   def total_price
-    items = get_line_items_in_cart
+    items = load_line_items_in_cart
     items.reduce(0) { |a, e| a + e[:product].price * e[:quantity] }
   end
 end

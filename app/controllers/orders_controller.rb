@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
   def new
     @cart = current_cart
-    @cart_items = get_line_items_in_cart
+    @cart_items = load_line_items_in_cart
     if current_cart.empty?
       flash[:info] = t("flash.info.empty_cart")
       redirect_to root_url
