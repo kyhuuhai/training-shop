@@ -11,9 +11,26 @@
   margin-bottom: 10px;
 
 }
+.address{
+  width: 50%;
+  padding-left: 10px;
+  height: 35px;
+  margin-bottom: 10px;
+     border: 1px solid black;
+} 
 .order-btn{
-  width: 30%;
+  font-weight: bold;
+  height: 35px;
+  width: 100%;
   background-color: rgb(13, 190, 25);
   border: 1px;
   border-radius: 5px;
+}
+.actions{
+margin-left: 80%;
+font-size: 18px;
+}
+.momey{
+  float: right;
+  margin-right: 10px;
 }

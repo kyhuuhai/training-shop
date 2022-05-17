@@ -1,19 +1,17 @@
 .container
   .anh
-    .mySlides style="display: block;"
+    .mySlides
       - if @product.images.attached?
-          .image 
+          .image
             = image_tag @product.images.first
       - else
         .image 
           img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
-    a.clickL onclick="plusSlides(-1)"  ❮
-    a.clickR onclick="plusSlides(1)"  ❯
     .row.sp
       - if @product.images.attached?
         - @product.images.each do |image| 
           .column
-            = image_tag image, class: "demo cursor", onclick: "currentSlide(#{image.id})"
+            = image_tag image, class: "demo cursor", stt:image.id
       - else
         .column
           img.demo.cursor src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"

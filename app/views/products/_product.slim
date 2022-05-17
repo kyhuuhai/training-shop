@@ -1,16 +1,14 @@
 .card2
-  =link_to product, class: "detail mb-15" do
+  =link_to product, class: "detail" do
     - if product.images.attached?
-        .image 
-          = image_tag product.images.first
+      .image 
+        = image_tag product.images.first
     - else 
       .image 
         img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
-  =link_to product, class: "detail mb-15" do
-    .name
+  =link_to product, class: "detail" do
+    .name.text
       h3 = product.name
   .price
     p = product.price.to_s + " $"
-  .description
-    p = product.description
   =link_to t("products.show.add_cart"), add_to_carts_path(id: product.id, quantity: 1), method: :post, class: "btn btn-primary btn-cart"

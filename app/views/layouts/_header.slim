@@ -3,6 +3,7 @@ nav.navbar.navbar-default.navbar-static-top
     .navbar.mb-0
       ul.nav.navbar-nav.navbar-right
         li= link_to t(".home"), root_path, class: "active"
+        li= link_to t(".product"), products_path
         li= link_to t(".contact"), contact_path
         li= render "layouts/language"
         - if logged_in?
@@ -19,6 +20,10 @@ nav.navbar.navbar-default.navbar-static-top
           - else
             li= render "layouts/account"
         - else
+          li
+            a href = login_path
+              span.cart = t(".cart")
+              i.fa.fa-shopping-cart
           li= link_to "Log in", login_path, class: "mr-5"
     .navbar-header
       = link_to root_path, class:'navbar-brand'

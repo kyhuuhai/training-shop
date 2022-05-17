@@ -1,6 +1,7 @@
 vi:
   layouts:
     header:
+      product: "Sản phảm"
       home: "Trang chủ"
       contact: "Liên hệ"
       dashboard: "Quản lý"
@@ -65,13 +66,15 @@ vi:
     form:
       avatar: "Ảnh đại diện"
     user:
-      edit: "Chỉnh sửa | "
+      edit: "Chỉnh sửa "
     show:
       username: "Tên người dùng: "
       address: "Địa chỉ: "
     new:
       sign_up: "Đăng nhập"
       create: "Tạo tài khoản"
+      do_have_an_account: "Bạn đã có tài khoản?"
+      log_in: "Đăng nhập!"
     edit:
       save: "Lưu"
       update_profile: "Cập nhật hồ sơ của bạn"
@@ -82,7 +85,7 @@ vi:
       image: "Hình ảnh"
       price: "Giá"
       quantity: "Số lượng"
-      delete: "Xóa"
+      delete: "Xóa "
       total: "Tổng"
       continue: "Tiếp tục mua sắm"
       update: "Cập nhập"
@@ -115,7 +118,7 @@ vi:
         admin: "Quản trị viên"
     categories:
       category:
-        all_product: "Tất cả sản phẩm | "
+        all_product: "Tất cả sản phẩm "
       index:
         modify: "Sửa đổi"
         add_category: "thêm danh mục mới"
