@@ -1,0 +1,13 @@
+- provide(:title, "Forgot password")
+.row
+  .sign-on
+    .col-lg-6.col-md-8.login-box
+      .col-lg-12.login-key
+        i.fa.fa-key aria-hidden="true" 
+      .col-lg-12.login-title
+        | Forgot password
+    .col-lg-12.login-form
+      = form_for(:password_reset, url: password_resets_path) do |f|
+        = f.label :email
+        = f.email_field :email, class: 'form-control'
+        = f.submit "Submit", class: "btn col-lg-6 login-btm login-button"

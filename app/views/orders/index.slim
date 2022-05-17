@@ -1,0 +1,14 @@
+table.table.table-condensed
+  thead
+    tr
+      td
+        b Products
+      td
+        b Price
+      td
+        b Quantity
+      td
+        b Status
+  = render @orders
+.paginate 
+  = will_paginate @orders

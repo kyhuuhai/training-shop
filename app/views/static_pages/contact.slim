@@ -1,0 +1,17 @@
+- provide(:title, "Contact")
+h1= t("layouts.footer.contact")
+p.center.lead.mb-5= t(".introduction_contact")
+.row
+  .col-md-6.col-md-offset-3
+      .form-group
+        = label_tag "Name", t("carts.index.name")
+        = text_field_tag "name", nil, class: "form-control"
+      .form-group
+        = label_tag "Email"
+        = text_field_tag "email", nil, class: "form-control"
+      .form-group
+        = label_tag "Message", t(".message")
+        = text_area_tag "message", nil, class: "form-control", rows: 5
+      .form-group
+        = button_tag t(".send"), type: "button", class: "btn btn-success w-50"
+        = button_tag t(".cancel"), type: "button", class: "btn btn-default w-50"

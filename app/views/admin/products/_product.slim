@@ -1,0 +1,23 @@
+tbody   
+  tr
+    td.code
+      = product.code
+    td.email
+      = product.name
+    td.email
+      = product.price
+    td.text
+      p = product.description
+    td.image
+      - if product.images.attached? 
+        - product.images.each do |image| 
+            = image_tag(url_for(image))
+      - else 
+        img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
+    td.chucNang
+      button.CN.edit
+        = link_to edit_admin_product_path(product)
+          i.fa.fa-pencil-square
+      button.CN.delete
+        = link_to admin_product_path(product) , method: :delete, data: { confirm: t(".confirm")+product.name }
+          i.fa.fa-trash-o

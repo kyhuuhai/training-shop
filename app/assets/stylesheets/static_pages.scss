@@ -1,0 +1,211 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  all: none;
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.logo {
+  padding: 5% 15px 5% 5%;
+  color: orangered;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: 800;
+}
+
+.navbar {
+  #test {
+    padding-right: 35px;
+    border: none;
+  }
+  .mb-0 {
+    margin-bottom: 0;
+  }
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+  background: rgb(241, 241, 241);
+  position: fixed;
+}
+
+footer {
+  li {
+    list-style: none;
+    margin-left: -1.5em;
+    a {
+      color: #333;
+    }
+  }
+  .footer-top,
+  .footer-middle,
+  .footer-bottom {
+    padding: 10px;
+    padding-left: 60px;
+    border-top: 1px solid #ddd;
+  }
+  .footer-top {
+    .item {
+      float: left;
+      margin-right: 1em;
+      margin-top: 0.6em;
+    }
+  }
+  .footer-middle {
+    .fa {
+      margin-right: 10px;
+    }
+  }
+}
+.center.top{
+  position: relative;
+  height: 450px;
+  color: white;
+  overflow: hidden;
+  #slider{
+    height: 450px;
+    width:auto;
+    position: absolute;
+    .slide{
+      img{
+        width:1200px;
+      }
+      a{
+        margin-top: -40%;
+      }
+    }
+  }
+  .content{
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    width: 80%;
+    left: 10%;
+  }
+}
+.new-products{
+  padding-top: 10px;
+  h1{
+    width: 20%;
+    font-weight: bold;
+    border-bottom: 5px solid red;
+    margin-left: 40%;
+  }
+}
+.content a {
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #e90404;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+.content a:hover {
+  background: #e90404;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #e90404,
+              0 0 25px #e90404,
+              0 0 50px #e90404,
+              0 0 100px #e90404;
+}
+.content a span {
+  position: absolute;
+  display: block;
+}
+.content a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e90404);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.content a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #e90404);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.content a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #e90404);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.content a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #e90404);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}

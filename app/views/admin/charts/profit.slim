@@ -1,0 +1,10 @@
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    = line_chart Order.group_by_day(:created_at).count, title: "Orders by day"
+    br
+    = column_chart Product.group_by_day(:created_at).count, title: "Products by day"
+    br
+    = pie_chart	 OrderDetail.group_by_day(:created_at).count, title: "Order details by day"
+    br
