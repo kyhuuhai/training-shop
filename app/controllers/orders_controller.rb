@@ -27,9 +27,22 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    @order = Order.find_by_id(params[:id])
+    if @order.status == 1
+      flash[:danger] = t("flash.danger.order")
+    elsif @order.destroy
+      flash[:info] = t("flash.info.deleted")
+      redirect_to orders_path
+    else
+      flash[:danger] = t("flash.danger.delete")
+      redirect_to orders_path
+    end
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:payment_method_id, :user_id)
+    params.require(:order).permit(:payment_method_id, :user_id, :total)
   end
 end

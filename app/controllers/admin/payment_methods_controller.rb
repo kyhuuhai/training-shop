@@ -42,7 +42,7 @@ module Admin
 
     def set_payment_method
       @payment_method = PaymentMethod.find_by_id(params[:id])
-      return unless @payment_method
+      return unless @payment_method.nil?
 
       flash[:danger] = t("flash.danger.payment_method_not_found")
       redirect_to admin_payment_methods_path

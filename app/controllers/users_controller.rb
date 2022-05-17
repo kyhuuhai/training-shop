@@ -1,3 +1,5 @@
+require "user_chat"
+
 class UsersController < ApplicationController
   before_action :logged_in_user, only: %i[edit update]
   before_action :load_user, only: %i[show edit update]
@@ -14,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
+      UserChat.creat_room_chat(@user.email, @user.id)
       flash[:info] = t("flash.info.signup_success")
       redirect_to root_url
     else

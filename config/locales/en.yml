@@ -24,10 +24,9 @@ en:
       user: "User"
       category: "Category"
       order: "Order"
-      chart_analysis: "Chart analysis"
+      payment_method: "Payment method"
       profit_statistics: "Profit statistics"
-      shipping_analysis: "Shipping analysis"
-      shipping_management: "Shipping Management"
+      chat: "Chat"
     footer:
       assistant: "Assistant"
       refund: "100% REFUND"
@@ -79,6 +78,7 @@ en:
   carts:
     index:
       my_cart: "My Cart"
+      product: "Product"
       name: "Name"
       image: "Image"
       price: "Price"
@@ -167,6 +167,7 @@ en:
     index:
       status: "Status"
       unit_price: "Unit price"
+      action: "Action"
   flash:
     success:
       activated: "Account activated!"
@@ -197,3 +198,5 @@ en:
       payment_method_not_found: "No information found."
       login_required: "Please log in."
       invalid_login: "Invalid email/password combination."
+      order: "Product are being delivered ,do not delete"
+      delete: "Deleted Success"

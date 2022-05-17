@@ -26,8 +26,7 @@ vi:
       order: "Đơn hàng"
       chart_analysis: "Biểu đồ phân tích"
       profit_statistics: "Thống kê lợi nhuận"
-      shipping_analysis: "Thống kê vận chuyển"
-      shipping_management: "Quản lý giao hàng"
+      Chat: "Tin nhắn"
     footer:
       assistant: "Hỗ trợ miễn phí"
       refund: "100% HOÀN TIỀN"
@@ -79,6 +78,7 @@ vi:
   carts:
     index:
       my_cart: "Giỏ hàng của tôi"
+      product: "Sản phẩm"
       name: "Tên"
       image: "Hình ảnh"
       price: "Giá"
@@ -167,6 +167,7 @@ vi:
     index:
       status: "Trạng thái"
       unit_price: "Đơn giá"
+      action: "Hành động"
   flash:
     success:
       activated: "Tài khoản đã được kích hoạt!"
@@ -175,8 +176,8 @@ vi:
       user_deleted: "Xóa thành công!"
       profile_update: "Hồ sơ cá nhân đã cập nhật."
       product_created: "Đã tạo sản phẩm thành công."
-      update: "Updated."
-      payment_method_created: "Created payment method sucessfully."
+      update: "Cập nhật."
+      payment_method_created: "Tạo phương thức thanh toán thành công."
     info:
       empty_cart: "Giỏ hàng của bạn đang trống."
       add: "Thêm "
@@ -197,3 +198,5 @@ vi:
       payment_method_not_found: "Không tìm thấy thông tin."
       login_required: "Vui lòng hãy đăng nhập."
       invalid_login: "Email / mật khẩu không hợp lệ."
+      order: "Hàng đang giao không được xóa"
+      delete: "Xóa thành công"

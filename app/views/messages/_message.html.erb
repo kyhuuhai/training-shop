@@ -1,0 +1,13 @@
+<% if message.user_id == current_user.id %>
+  <div class="sent_msg talk-bubble round">
+    <% unless message.content.blank? %>
+      <p><%= message.content %></p>
+    <% end %>
+  </div>
+<% else %>
+  <div class="received_msg talk-bubble round">
+    <% unless message.content.blank? %>
+      <p><%= message.content %></p>
+    <% end %>
+  </div>
+<% end %>
