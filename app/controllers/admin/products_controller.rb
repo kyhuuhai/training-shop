@@ -42,7 +42,7 @@ module Admin
     end
 
     def destroy
-      return unless product.destroy
+      return unless @product.destroy
 
       flash[:info] = t("flash.info.deleted")
       redirect_to admin_products_path

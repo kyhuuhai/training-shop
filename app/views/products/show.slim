@@ -1,19 +1,17 @@
 .container
   .anh
-    .mySlides style="display: block;"
+    .mySlides
       - if @product.images.attached?
-          .image 
+          .image
             = image_tag @product.images.first
       - else
         .image 
           img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
-    a.clickL onclick="plusSlides(-1)"  ❮
-    a.clickR onclick="plusSlides(1)"  ❯
     .row.sp
       - if @product.images.attached?
         - @product.images.each do |image| 
           .column
-            = image_tag image, class: "demo cursor", onclick: "currentSlide(#{image.id})"
+            = image_tag image, class: "demo cursor", stt:image.id
       - else
         .column
           img.demo.cursor src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
@@ -28,18 +26,18 @@
           span.fa.fa-star.checked
           span.fa.fa-star
           span.fa.fa-star
-        span.review-no 123 = t(".rate")
+        span.review-no 123 = t("products.show.rate")
       h4.price 
-        span= t(".price")
+        span= t("products.show.price")
         = @product.price
       p.product-description 
         = @product.description
       .checkProduct.productAvailable
-        strong> = t(".status")
-        span= t(".available")
+        strong> = t("products.show.status")
+        span= t("products.show.available")
       = form_with url: add_to_carts_path do |f|
         .itemQuantity
-          b= t(".quantity")
+          b= t("products.show.quantity")
           .number
             = f.number_field :quantity, :value => 1, :min =>  1
           .add

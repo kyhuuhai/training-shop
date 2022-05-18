@@ -1,13 +1,13 @@
-- provide(:title, "Cart")
-h1 = t(".my_cart")
-table.table.table-bordered id="table"
+- provide(:title, t("carts.index.my_cart"))
+h1 = t("carts.index.my_cart")
+table.table.table-bordered
   thead.bg-primary
     tr
-      th.text-center = t(".product")
-      th.text-center = t(".image")
-      th.text-center = t(".price")
-      th.text-center = t(".quantity")
-      th.text-center = t(".total")
+      th.text-center = t("carts.index.product")
+      th.text-center = t("carts.index.image")
+      th.text-center = t("carts.index.price")
+      th.text-center = t("carts.index.quantity")
+      th.text-center = t("carts.index.total")
       th.text-center
   tbody
     - @cart_items.each do |item|
@@ -36,15 +36,15 @@ table.table.table-bordered id="table"
             = subtotal(item).to_s + " $"
         td.text-center.btn-action
           =link_to remove_from_carts_path(id: item[:product].id), method: :delete, class: "btn btn-danger btn-cart" do
-            span = t(".delete")
+            span = t("carts.index.delete")
             i.fa.fa-trash
   tfoot.bg-info
     tr
-      td.text-center.fw-bold colspan="4" = t(".total")
+      td.text-center.fw-bold colspan="4" = t("carts.index.total")
       td.fw-bold colspan = "2"
         span#total-price
           = total_price.to_s + " $"
 .pb-3.pt-3
-  = link_to t(".continue"), root_path, class: "btn btn-primary mr-5"
-  = button_tag t(".update"), class: "btn btn-success btn-update mr-5", data: { items: @cart_items.map { |item| item[:product] } }, method: :post, remote: true
-  = link_to t(".order"), new_order_path, class: "btn btn-success"
+  = link_to t("carts.index.continue"), root_path, class: "btn btn-primary mr-5"
+  = button_tag t("carts.index.update"), class: "btn btn-success btn-update mr-5", data: { items: @cart_items.map { |item| item[:product] } }, method: :post, remote: true
+  = link_to t("carts.index.order"), new_order_path, class: "btn btn-success"

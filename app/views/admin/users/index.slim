@@ -13,9 +13,9 @@
         td.userAvatar
           b= t("users.form.avatar")
         td.loaiUser
-          b= t(".type")
+          b= t("admin.users.index.type")
         td.chucNang
-          b= t(".action")
+          b= t("admin.users.index.action")
     = render @users
     .paginate 
       = will_paginate @users

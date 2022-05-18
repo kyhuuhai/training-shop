@@ -1,6 +1,6 @@
-= form_tag admin_products_path, :method => 'get' do
+= form_tag admin_products_path, method: :get do
   .search-products
     p
-      = text_field_tag :name, params[:name], placeholder: 'Name', class: 'form control search'
+      = text_field_tag :name, params[:name], placeholder: t("admin.products.search.name_product"), class: "form control search"
       = collection_select(nil, :category_id, Category.all, :id, :name, prompt: true, class: "filter-search")
       = submit_tag t("layouts.header.search"), :name => nil, class: "btn btn-success search"

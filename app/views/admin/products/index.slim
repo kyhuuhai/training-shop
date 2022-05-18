@@ -2,23 +2,23 @@
   .col-sm-3.sidebar
     = render "layouts/dashboard"
   .col-sm-9
-    h1  =t("products.index.category")
+    h1  =t("products.index.product")
     button.CN.new
       = link_to new_admin_product_path(@product)
         i.fa.fa-plus-circle
         span= t("products.new.new_product")
-    = render 'search_form'
+    = render "search_form"
     table.table.table-condensed
       thead
         tr
           td
-            b= t(".code")
+            b= t("admin.categories.show.code")
           td
             b= t("carts.index.name")
           td
             b= t("carts.index.price")
           td
-            b= t(".description")
+            b= t("admin.categories.show.description")
           td
             b= t("carts.index.image")
           td

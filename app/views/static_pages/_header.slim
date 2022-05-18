@@ -1,0 +1,44 @@
+.center.top
+  #slider
+    .slide
+      img src="https://i.imgur.com/erYH1cO.jpg" stt="0"
+      img src="https://i.imgur.com/04UFsit.jpg" stt="1" style="display:none;"
+      img src="https://i.imgur.com/FEO5IeF.jpg" stt="2" style="display:none;"
+      img src="https://i.imgur.com/kNJJRUS.jpg" stt="3" style="display:none;"
+  a.clickL  ❮
+  a.clickR  ❯
+  .content
+    h1 
+      span= t("static_pages.header.welcome")
+      b Shopppi
+    - if logged_in?
+      = link_to products_path
+        span
+        span
+        span
+        span
+        = t("static_pages.header.show_all_product")
+    -else
+      = link_to signup_path
+        span
+        span
+        span
+        span
+        = t("sessions.new.sign_up_now")
+.new-products
+  h1= t("static_pages.header.product_new")
+  - @products.each do |product|
+      .card2
+        =link_to product, class: "detail" do
+          - if product.images.attached?
+            .image 
+              = image_tag product.images.first
+          - else 
+            .image 
+              img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="Denim Jeans"
+        =link_to product, class: "detail" do
+          .name.text
+            h3 = product.name
+        .price
+          p = product.price.to_s + " $"
+        =link_to t("static_pages.header.add_to_cart"), add_to_carts_path(id: product.id, quantity: 1), method: :post, class: "btn btn-primary btn-cart"

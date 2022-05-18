@@ -1,49 +1,49 @@
-button.CN.delete{
- background: red;
+button.CN.delete {
+    background: red;
 }
-button.CN.edit{
-background: rgb(26, 71, 219);
+button.CN.edit {
+    background: rgb(26, 71, 219);
 }
-button.CN.detail{
+button.CN.detail {
     background: green;
 }
-button.CN.new{
+button.CN.new {
     background: rgb(7, 179, 7);
     margin-bottom: 10px;
     padding: 6px 10px 6px 10px;
 }
-button.CN{
- border: none;
- border-radius: 5px;
- padding: 6px 10px 6px 10px;
- margin-left: 10px;
- color: white;
- font-size: 15px;
+button.CN {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 10px 6px 10px;
+    margin-left: 10px;
+    color: white;
+    font-size: 15px;
 }
-button.CN a{
+button.CN a {
     color: white;
     font-weight: bold;
 }
-table.table.table-bordered{
+table.table.table-bordered {
     margin-bottom: 0px;
 }
-td.userId{
+td.userId {
     width: 5%;
 }
-td.userAvatar{
+td.userAvatar {
     width: 10%;
 }
-td.userName{
+td.userName {
     width: 18%;
 }
-td.loaiUser{
+td.loaiUser {
     width: 10%;
 }
-td.chucNang{
+td.chucNang {
     width: 15%;
 }
 // ============
-.showUser{
+.showUser {
     border: 1px solid black;
     margin-left: 30%;
     max-width: 450px;
@@ -52,7 +52,7 @@ td.chucNang{
     margin-bottom: 20px;
     padding: 20px 0 0 20px;
 }
-.avatars img{
+.avatars img {
     width: 40px;
     height: 40px;
     border-radius: 50%;

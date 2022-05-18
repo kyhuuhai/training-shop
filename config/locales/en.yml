@@ -1,6 +1,7 @@
 en:
   layouts:
     header:
+      product: "Product"
       home: "Home"
       contact: "Contact"
       dashboard: "Dashboard"
@@ -49,8 +50,15 @@ en:
       message: "Message"
       send: "Send"
       cancel: "Cancel"
+    header:
+      show_all_product: "Show all products"
+      welcome: "Welcome to the "
+      product_new: "Product new"
+      add_to_cart: "Add to Cart"
   password_resets:
     edit:
+      reset_password: "Reset password"
+      update_password: "Update password"
       password: "Password"
       password_confirmation: "Password Confirmation"
   sessions:
@@ -64,7 +72,7 @@ en:
     form:
       avatar: "Avatar"
     user:
-      edit: "Edit | "
+      edit: "Edit "
     show:
       username: "User name: "
       address: "Address: "
@@ -72,6 +80,8 @@ en:
     new:
       sign_up: "Sign up"
       create: "Create my account"
+      do_have_an_account: "Do you already have an account?"
+      log_in: "Log in!"
     edit:
       save: "Save changes"
       update_profile: "Update your profile"
@@ -83,7 +93,7 @@ en:
       image: "Image"
       price: "Price"
       quantity: "Quantity"
-      delete: "Delete"
+      delete: "Delete "
       total: "Total"
       continue: "Continue Shopping"
       update: "Update"
@@ -91,7 +101,7 @@ en:
       info: "Infomation"
   products:
     index:
-      category: "Categories"
+      product: "Products"
       content1: "Please add categories to your store "
       content2: "There is no suitable product"
       add_product: "adding new products"
@@ -118,7 +128,7 @@ en:
         confirm: "Do you want to delete the user: "
     categories:
       category:
-        all_product: "All products | "
+        all_product: "All products "
       index:
         modify: "Modify"
         add_category: "adding new category"
@@ -139,6 +149,12 @@ en:
         new_product: "New Products"
       edit:
         edit_product: "Edit Products"
+      search:
+        name_product: "Name Products"
+    orders:
+      order:
+        customer: "Customer: "
+        total: "Total: "
     payment_methods:
       form:
         payment_method_name: "Payment method name: "
@@ -147,7 +163,7 @@ en:
       index:
         title: "Store Payment Method"
         description: "Please add Payment Method to your store"
-        add_payment_method: "adding new payment method"
+        add_payment_method: " Adding new payment method"
       new:
         title: "New Payment Method"
       show:
@@ -157,10 +173,16 @@ en:
         order_chart_title: "Orders by day"
         product_chart_title: "Products by day"
         order_detail_chart_title: "Order details by day"
+    rooms:
+      index:
+        list_room: "List rooms"
+        owner: "Owner"
   orders:
     form:
       payment_method: "Payment method:"
       name: "Name: "
+      shipping: "Shipping: "
+      total_money: "Total money: "
     order:
       pending: "Pending"
       completed: "Completed"
@@ -173,11 +195,12 @@ en:
       activated: "Account activated!"
       added: "Added "
       password_reset: "Password has been reset."
-      user_deleted: "Delete successfully!"
+      deleted: "Delete successfully!"
       profile_update: "Profile updated."
       product_created: "Created product successfully."
       update: "Updated."
       payment_method_created: "Created payment method successfully."
+      category_created: "Category was successfully created."
     info:
       empty_cart: "Your cart is empty."
       add: "Add "

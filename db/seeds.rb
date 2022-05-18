@@ -13,7 +13,7 @@ end
 
 99.times do |n|
   name = Faker::Name.name
-  code = "#{n + 1}.to_s"
+  code = "#{n + 1}"
   price = "#{(n + 1) * 100}"
   description = Faker::Lorem.sentence(5)
   if n % 2 == 1
@@ -39,9 +39,8 @@ end
                password: password,
                password_confirmation: password,
                activated: true,
-               activated_at: Time.zone.now
-               )
-  Room.create!(name:email, user_id: n+1)
+               activated_at: Time.zone.now)
+  Room.create!(name: email, user_id: n + 1)
 end
 
 3.times do |n|

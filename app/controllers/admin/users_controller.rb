@@ -10,7 +10,7 @@ module Admin
 
     def destroy
       if @user.destroy
-        flash[:success] = t("flash.success.user_deleted")
+        flash[:success] = t("flash.success.deleted")
       else
         flash[:danger] = t("flash.danger.user_not_deleted")
       end

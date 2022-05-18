@@ -1,9 +1,9 @@
-h1 =t(".category")
-= render 'products/form'
+h1 =t("products.index.category")
+= render "products/form"
 - if !@products.empty?
   .all_products
     = render @products
 - else 
-  p = t(".content2")
+  p = t("products.index.content2")
 .paginate 
   = will_paginate @products

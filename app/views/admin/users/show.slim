@@ -7,7 +7,7 @@
       .avatar
         = gravatar_for @user
     -if @user.is_admin?
-      p= t(".admin")
+      p= t("admin.users.user.admin")
     -else
       p= t("layouts.dashboard.user")
     b ID: 

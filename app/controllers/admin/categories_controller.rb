@@ -19,7 +19,7 @@ module Admin
     def create
       @category = Category.new(category_params)
       if @category.save
-        flash[:success] = "Category was successfully created."
+        flash[:success] = t("flash.success.category_created")
         redirect_to admin_categories_path
       else
         render "new"
@@ -28,7 +28,7 @@ module Admin
 
     def update
       if @category.update(category_params)
-        flash[:success] = "Profile updated"
+        flash[:success] = t("flash.success.update")
         redirect_to admin_categories_path
       else
         render "edit"
@@ -38,7 +38,7 @@ module Admin
     def destroy
       return unless @category.destroy
 
-      flash[:success] = "Delete succesfully"
+      flash[:success] = t("flash.success.deleted")
       redirect_to admin_categories_path
     end
 
@@ -48,7 +48,7 @@ module Admin
       @category = Category.find_by_id(params[:id])
       return if @category
 
-      flash[:info] = "Không tìm thấy thông tin sản phẩm"
+      flash[:info] = t("flash.info.product_not_found")
       redirect_to admin_categories_path
     end
 

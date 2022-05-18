@@ -1,16 +1,21 @@
 - provide(:title, t("sessions.new.login"))
-h1.text-center = t("sessions.new.login")
 .row
-  .col-md-6.col-md-offset-3
-    = form_for(:session, url: login_path) do |f|
-      = f.label :email
-      = f.email_field :email, class: "form-control"
-      = f.label :password, t("password_resets.edit.password"), class: "mt-3"
-      = f.password_field :password, class: "form-control"
-      = link_to t("sessions.new.forgot"), new_password_reset_path
-      = f.label :remember_me, class: "checkbox inline" do
-        = f.check_box :remember_me
-        span= t("sessions.new.remember")
-      = f.submit t("sessions.new.login"), class: "btn btn-primary mt-3"
-    span=t("sessions.new.new_user")
-    span= link_to t("sessions.new.sign_up_now"), signup_path
+  .sign-on
+    .col-lg-6.col-md-8.login-box
+      .col-lg-12.login-key
+        i.fa.fa-key aria-hidden="true" 
+      .col-lg-12.login-title
+        = t("sessions.new.login")
+    .col-lg-12.login-form
+      = form_for(:session, url: login_path) do |f|
+        = f.label :email
+        = f.email_field :email, class: "form-control"
+        = f.label :password, t("password_resets.edit.password"), class: "mt-3"
+        = f.password_field :password, class: "form-control"
+        = link_to t("sessions.new.forgot"), new_password_reset_path
+        = f.label :remember_me, class: "checkbox inline" do
+          = f.check_box :remember_me
+          span= t("sessions.new.remember")
+        = f.submit t("sessions.new.login"), class: "btn col-lg-6 login-btm login-button"
+      span=t("sessions.new.new_user")
+      span= link_to t("sessions.new.sign_up_now"), signup_path

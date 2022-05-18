@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_05_16_030442) do
-=======
-ActiveRecord::Schema.define(version: 2022_05_12_031627) do
->>>>>>> e7a4ab951dbc62ad56b5054f8d26dfce092a3071
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,11 +67,8 @@ ActiveRecord::Schema.define(version: 2022_05_12_031627) do
     t.bigint "room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
-=======
     t.index ["room_id"], name: "index_messages_on_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
->>>>>>> e7a4ab951dbc62ad56b5054f8d26dfce092a3071
   end
 
   create_table "order_details", force: :cascade do |t|
