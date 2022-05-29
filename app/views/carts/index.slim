@@ -1,0 +1,50 @@
+- provide(:title, t("carts.index.my_cart"))
+h1 = t("carts.index.my_cart")
+table.table.table-bordered
+  thead.bg-primary
+    tr
+      th.text-center = t("carts.index.product")
+      th.text-center = t("carts.index.image")
+      th.text-center = t("carts.index.price")
+      th.text-center = t("carts.index.quantity")
+      th.text-center = t("carts.index.total")
+      th.text-center
+  tbody
+    - @cart_items.each do |item|
+      tr
+        td.w-25
+          .product-name
+            = item[:product].name
+        td.text-center.w-20
+          .product-thumbnail
+            - if item[:images].blank?
+              img.img-fluid alt="image-product" src="https://www.w3schools.com/w3images/jeans3.jpg"
+            - else
+              img.img-fluid alt="image-product" src= item[:images][0]
+        td.text-center.w-15
+          .cart-price id="price-#{item[:product].id}"
+            = item[:product].price.to_s + " $"
+        = form_with do |f|
+          td.text-center.w-15
+            = f.button "Sub", class: "btn btn-default sub-btn", data: { id: "#{item[:product].id}" }, type: "button" do
+              i.fa.fa-minus
+            = f.text_field "quantity", value: item[:quantity], class: "text-center form-control number-input cart-quantity", id: "cart_#{item[:product].id}"
+            = f.button "Add", class: "btn btn-default add-btn", data: { id: "#{item[:product].id}" }, type: "button" do
+              i.fa.fa-plus
+        td.w-15
+          .fw-bold.cart-subtotal id="subtotal-#{item[:product].id}"
+            = subtotal(item).to_s + " $"
+        td.text-center.btn-action
+          =link_to remove_from_carts_path(id: item[:product].id), method: :delete, class: "btn btn-danger btn-cart" do
+            span = t("carts.index.delete")
+            i.fa.fa-trash
+  tfoot.bg-info
+    tr
+      td.text-center.fw-bold colspan="4" = t("carts.index.total")
+      td.fw-bold colspan = "2"
+        span#total-price
+          = total_price.to_s + " $"
+.pb-3.pt-3
+  = link_to t("carts.index.continue"), root_path, class: "btn btn-primary mr-5"
+  = button_tag t("carts.index.update"), class: "btn btn-success btn-update mr-5", data: { items: @cart_items.map { |item| item[:product] } }, method: :post, remote: true
+  = link_to t("carts.index.order"), new_order_path, class: "btn btn-success"

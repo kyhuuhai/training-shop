@@ -10,8 +10,20 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/config/database.yml
+
+/node_modules
+yarn.lock
+yarn-error.log
+yarn-debug.log
+yarn-integrity.json
 
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
+/storage
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

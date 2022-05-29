@@ -1,0 +1,10 @@
+tbody
+  tr
+    td= payment_method.name
+    td
+      button.CN.edit
+        = link_to t("users.user.edit"), edit_admin_payment_method_path(payment_method)
+        i.fa.fa-pencil-square
+      button.CN.delete
+        = link_to t("carts.index.delete"), admin_payment_method_path(payment_method), method: :delete
+        i.fa.fa-trash-o

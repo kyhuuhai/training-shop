@@ -1,0 +1,11 @@
+h1
+  = current_user.name
+.messaging
+  .inbox_msg
+    .mesgs
+      #messages.msg_history*{"current_user" => current_user.id, "room_id" => @room.id }
+        = render @messages
+    .type_msg
+      .input_msg_write
+        input#user_id*{"name" => "user_id", "type" =>"hidden", "value" =>current_user.id}
+        input.write_msg.js-message-content[type="text" placeholder="Type a message"]

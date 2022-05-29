@@ -1,0 +1,19 @@
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    h1= t("admin.payment_methods.index.title")
+    button.CN.new
+      = link_to new_admin_payment_method_path
+        i.fa.fa-plus-circle
+        span= t("admin.payment_methods.index.add_payment_method")
+    table.table.table-condensed
+      thead
+        tr
+          td
+            b= t("carts.index.name")
+          td
+            b= t("categories.index.modify")
+      = render @payment_methods
+    .paginate 
+      = will_paginate @payment_methods

@@ -1,0 +1,56 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+button.CN.delete {
+  background: red;
+}
+button.CN.edit {
+  background: rgb(26, 71, 219);
+}
+button.CN.detail {
+  background: green;
+}
+
+button.CN {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  color: white;
+}
+
+button.CN a {
+  color: white;
+  font-weight: bold;
+}
+
+table.table.table-bordered {
+  margin-bottom: 0px;
+}
+
+td.userName {
+  width: 18%;
+}
+
+td.chucNang {
+  width: 15%;
+}
+
+td.image img {
+  height: auto;
+  width: auto;
+  max-width: 50px;
+  max-height: auto;
+}
+.text {
+  overflow: hidden;
+  p {
+    max-width: 300px;
+    text-overflow: ellipsis;
+  }
+}
+#category_id {
+  width: 15%;
+  padding: 6px 0;
+  margin: 0 15px;
+}

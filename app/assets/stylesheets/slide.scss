@@ -1,0 +1,17 @@
+.slider {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  overflow-x: auto;
+  float: left;
+  margin: 30px 0 30px 0;
+}
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+}
+.slide img {
+  height: 100%;
+  opacity: 1;
+}

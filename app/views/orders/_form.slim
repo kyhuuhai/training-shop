@@ -1,0 +1,62 @@
+- if logged_in?
+  = form_for(@order) do |f|
+    .row
+      - if @order.errors.any?
+        #error_explanation
+          h2
+            = pluralize(@order.errors.count, "error")
+            |  prohibited this order from being saved: 
+          ul
+            - @order.errors.full_messages.each do |message|
+              li= message
+      .col-md-6
+        .field
+          = f.hidden_field :user_id, :value => current_user.id
+          = f.hidden_field :total, :value => total_price
+          = f.label :name, t("orders.form.name"), class: "form-label"
+          = f.text_field :name, :value => current_user.name, class: "form-control"
+          br
+          = f.label :phone, t("users.show.phone"), class: "form-label"
+          = f.telephone_field :phone, :value => current_user.phone, class: "form-control", pattern: "\\d{10}"
+          br
+          = f.label :address, t("users.show.address"), placeholder: " Specific address", class: "form-label"
+          = f.text_field :address, :value => current_user.address, class: "form-control"
+          br
+          = f.label :payment_method, t("orders.form.payment_method"), class: "form-label"
+          br
+          = f.collection_select :payment_method_id, PaymentMethod.all, :id, :name, {include_blank: "Select Payment Method"}, {class: "form-control form-select-sm custom-select"}
+      .col-md-6
+        table.table.table-striped
+          thead.bg-primary
+            tr
+              th.text-center = t("carts.index.image")
+              th = t("carts.index.info")
+              th.text-right = t("carts.index.price")
+          tbody
+            - @cart_items.each do |item|
+              tr
+                td.text-center
+                  .product-img
+                    - if item[:images].blank?
+                      img.img-fluid alt="image-product" src="https://www.w3schools.com/w3images/jeans3.jpg"
+                    - else
+                      img.img-fluid alt="image-product" src= item[:images][0]
+                td
+                  .product-name
+                    = item[:product].name + " x" + item[:quantity].to_s
+                td.subtotal.text-right.mr-5
+                  = subtotal(item).to_s + " $"
+          tfoot.bg-info
+            tr
+              td.fw-bold colspan="2"  = f.label t("orders.form.shipping"), class: "form-label"
+              td.fw-bold.text-right.mr-5 0$
+            tr
+              td.fw-bold colspan="2"  = t("carts.index.total")
+              td.fw-bold.text-right.mr-5
+                span#total-price
+                  = total_price.to_s + " $"
+    .row
+      .col-md-6.col-md-offset-6
+          = f.submit t("carts.index.order"), class: "btn order-btn"
+- else
+  = render "login"

@@ -1,0 +1,18 @@
+tbody
+  tr.order
+    - order.order_details.each do |order_detail|
+      tr
+        td = order_detail.product.name
+        td = order_detail.unit_price
+        td = order_detail.quantity
+        - if order.status.nil?
+          td= t("orders.order.pending")
+        -else
+          td= t("orders.order.completed")
+  tr
+    td
+      span= t("admin.orders.order.customer")
+      = order.user.name
+    td
+      span= t("admin.orders.order.total")
+      = order.total   

@@ -1,0 +1,16 @@
+table.table.table-condensed
+  thead
+    tr
+      td
+        b= t("layouts.dashboard.product")
+      td
+        b= t("carts.index.price")
+      td
+        b= t("carts.index.quantity")
+      td
+        b= t("orders.index.status")
+      td
+        b= t("orders.index.action")
+  = render @orders
+.paginate 
+  = will_paginate @orders

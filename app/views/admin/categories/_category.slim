@@ -1,0 +1,13 @@
+tbody
+  tr
+    td= category.name
+    td
+      button.CN.edit
+        = link_to t("users.user.edit"), edit_admin_category_path(category)
+        i.fa.fa-pencil-square
+      button.CN.detail
+        = link_to t("admin.categories.category.all_product"), admin_category_path(category)
+        i.fa.fa-info-circle
+      button.CN.delete
+        = link_to t("carts.index.delete"), admin_category_path(category), method: :delete
+        i.fa.fa-trash-o

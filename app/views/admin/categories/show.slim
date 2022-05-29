@@ -1,0 +1,25 @@
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    - if @products.present?
+      table.table.table-condensed
+        thead
+          tr
+            td
+              b= t("admin.categories.show.code")
+            td
+              b= t("carts.index.name")
+            td
+              b= t("carts.index.price")
+            td
+              b= t("admin.categories.show.description")
+            td
+              b= t("carts.index.image")
+            td
+              b= t("admin.categories.index.modify")
+        = render @products
+    - else 
+      p= t("admin.categories.show.content_category")
+    .paginate 
+      = will_paginate @products

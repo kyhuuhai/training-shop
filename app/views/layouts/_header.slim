@@ -1,0 +1,23 @@
+nav.navbar.navbar-default.navbar-static-top
+  .container
+    .navbar.mb-0
+      ul.nav.navbar-nav.navbar-right
+        li= link_to t("layouts.header.home"), root_path, class: "active"
+        li= link_to t("layouts.dashboard.product"), products_path
+        li= link_to t("layouts.header.contact"), contact_path
+        li= render "layouts/language"
+        - if logged_in?
+          - if current_user.is_admin?
+            li= render "layouts/account"
+          - else
+            li= render "layouts/account"
+        - else
+          li
+            a href = carts_path
+              span.cart = t("layouts.account.cart")
+              i.fa.fa-shopping-cart
+          li= link_to t("sessions.new.login"), login_path, class: "mr-5"
+    .navbar-header
+      = link_to root_path, class:'navbar-brand'
+        b.logo 
+          | Shopppi

@@ -1,7 +1,49 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create!(name: "Admin User",
+             email: "admin@gmail.com",
+             password: "123456",
+             password_confirmation: "123456",
+             is_admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
+
+2.times do |n|
+  name = "Category #{n + 1}"
+  Category.create!(name: name)
+end
+
+99.times do |n|
+  name = Faker::Name.name
+  code = "#{n + 1}"
+  price = "#{(n + 1) * 100}"
+  description = Faker::Lorem.sentence(5)
+  if n % 2 == 1
+    category = "1"
+  else
+    category = "2"
+  end
+  random_date = rand(1..20).days
+  Product.create!(name: name,
+                  code: code,
+                  price: price,
+                  description: description,
+                  category_ids: category,
+                  created_at: Time.zone.now + random_date)
+end
+
+99.times do |n|
+  name = Faker::Name.name
+  email = "example-#{n + 1}@railstutorial.org"
+  password = "password"
+  User.create!(name: name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
+  Room.create!(name: email, user_id: n + 1)
+end
+
+3.times do |n|
+  name = "Payment Method #{n + 1}"
+  PaymentMethod.create!(name: name)
+end
