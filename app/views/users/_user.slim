@@ -4,5 +4,5 @@
   .email
     p = user.email 
   .action   
-    = link_to "Edit |",  user
-    = link_to "Delete", user, method: :delete
+    = link_to t(".edit"),  user
+    = link_to t("carts.index.delete"), user, method: :delete

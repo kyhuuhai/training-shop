@@ -1,46 +1,50 @@
 - provide(:title, "Cart")
-h1 My Cart
+h1 = t(".my_cart")
 table.table.table-bordered id="table"
   thead.bg-primary
     tr
-      th.text-center Name
-      th.text-center Image
-      th.text-center Price
-      th.text-center Quantity
-      th.text-center Total
-      th.text-center Action
+      th.text-center = t(".product")
+      th.text-center = t(".image")
+      th.text-center = t(".price")
+      th.text-center = t(".quantity")
+      th.text-center = t(".total")
+      th.text-center
   tbody
     - @cart_items.each do |item|
       tr
-        td.w-30
+        td.w-25
           .product-name
-            = item[:product][0]["name"]
+            = item[:product].name
         td.text-center.w-20
           .product-thumbnail
-            img.img-fluid alt="image-product" src="https://www.w3schools.com/w3images/jeans3.jpg"
+            - if item[:images].blank?
+              img.img-fluid alt="image-product" src="https://www.w3schools.com/w3images/jeans3.jpg"
+            - else
+              img.img-fluid alt="image-product" src= item[:images][0]
         td.text-center.w-15
-          .cart-price id="price-#{item[:product][0]["id"]}"
-            = item[:product][0]["price"].to_s + " $"
+          .cart-price id="price-#{item[:product].id}"
+            = item[:product].price.to_s + " $"
         = form_with do |f|
           td.text-center.w-15
-            = f.button "Sub", class: "btn btn-default sub-btn", data: { id: "#{item[:product][0]["id"]}" }, type: "button" do
+            = f.button "Sub", class: "btn btn-default sub-btn", data: { id: "#{item[:product].id}" }, type: "button" do
               i.fa.fa-minus
-            = f.text_field "quantity", value: item[:quantity], class: "text-center form-control number-input cart-quantity", id: "cart_#{item[:product][0]["id"]}"
-            = f.button "Add", class: "btn btn-default add-btn", data: { id: "#{item[:product][0]["id"]}" }, type: "button" do
+            = f.text_field "quantity", value: item[:quantity], class: "text-center form-control number-input cart-quantity", id: "cart_#{item[:product].id}"
+            = f.button "Add", class: "btn btn-default add-btn", data: { id: "#{item[:product].id}" }, type: "button" do
               i.fa.fa-plus
         td
-          .fw-bold.cart-subtotal id="subtotal-#{item[:product][0]["id"]}"
+          .fw-bold.cart-subtotal id="subtotal-#{item[:product].id}"
             = subtotal(item).to_s + " $"
         td.text-center.btn-action
-          =link_to remove_from_carts_path(id: item[:product][0].id), method: :delete, class: "btn btn-danger btn-cart" do
-            span Delete
+          =link_to remove_from_carts_path(id: item[:product].id), method: :delete, class: "btn btn-danger btn-cart" do
+            span = t(".delete")
             i.fa.fa-trash
   tfoot.bg-info
     tr
-      td.text-center.fw-bold colspan="4"  Total
+      td.text-center.fw-bold colspan="4" = t(".total")
       td.fw-bold colspan = "2"
         span#total-price
           = total_price.to_s + " $"
 .pb-3.pt-3
-  = link_to "Continue Shopping", root_path, class: "btn btn-primary mr-5"
-  = link_to "Order", "#", class: "btn btn-success"
+  = link_to t(".continue"), root_path, class: "btn btn-primary mr-5"
+  = button_tag t(".update"), class: "btn btn-success btn-update mr-5", data: { items: @cart_items.map { |item| item[:product] } }, method: :post, remote: true
+  = link_to t(".order"), new_order_path, class: "btn btn-success"

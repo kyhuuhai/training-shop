@@ -6,15 +6,15 @@
     - else
       .avatar
         = gravatar_for @user
-    br
-    b ID: 
-    = @user.id
-    br
-    b Tên tài khoản: 
+  br
+  .information
+    b= t(".username")
     = @user.name
+    br
     p
       b Email: 
       = @user.email
+    br
     p
-      b Address: 
+      b= t(".address")
       = @user.address

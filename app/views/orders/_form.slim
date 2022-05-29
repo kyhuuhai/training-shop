@@ -1,0 +1,52 @@
+= form_for(@order) do |f|
+  - if @order.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@order.errors.count, "error")
+        |  prohibited this order from being saved: 
+      ul
+        - @order.errors.full_messages.each do |message|
+          li
+            = message
+  table.table.table-bordered id="table"
+    thead.bg-primary
+      tr
+        th.text-center = t("carts.index.name")
+        th.text-center = t("carts.index.image")
+        th.text-center = t("carts.index.price")
+        th.text-center = t("carts.index.quantity")
+        th.text-center = t("carts.index.total")
+    tbody
+      - @cart_items.each do |item|
+        tr
+          td.w-30
+            .product-name
+              = item[:product].name
+          td.text-center.w-20
+            .product-thumbnail
+              - if item[:images].blank?
+                img.img-fluid alt="image-product" src="https://www.w3schools.com/w3images/jeans3.jpg"
+              - else
+                img.img-fluid alt="image-product" src= item[:images][0]
+          td.text-center.w-15
+            .cart-price id="price-#{item[:product].id}"
+              = item[:product].price.to_s + " $"
+          td.text-center.w-15
+            p= item[:quantity]
+          td.subtotal
+            = subtotal(item).to_s + " $"
+    tfoot.bg-info
+      tr
+        td.text-center.fw-bold colspan="4"  = t("carts.index.total")
+        td.fw-bold colspan = "2"
+          span#total-price
+            = total_price.to_s + " $"
+  .field
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.label "Address", t("users.show.address")
+    = f.text_field :address, :value => current_user.address
+    = f.label :payment_method, t("orders.form.payment_method")
+    br
+    = f.collection_select :payment_method_id, PaymentMethod.all, :id, :name, class: "custom-select"
+  .actions
+    = f.submit t("carts.index.order"), class: "btn order-btn"

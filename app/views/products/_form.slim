@@ -1,7 +1,7 @@
 = search_form_for @q do |f|
   .search-products
-    = f.search_field :name_cont, placeholder: "Search...", class: 'form control search'
-    b.control-price Price
-    = f.search_field :price_gteq,placeholder: "From", class: 'form control search'
-    = f.search_field :price_lteq,placeholder: "To", class: 'form control search'
-    = f.submit "Search!",class: "btn btn-success search"
+    = f.search_field :name_cont, placeholder: t(".search_input"), class: "form control search w-30"
+    = f.label :price_gteq, t(".price"), class: "control-price"
+    = f.search_field :price_gteq, placeholder: t(".from"), class: "form control search"
+    = f.search_field :price_lteq, placeholder: t(".to"), class: "form control search"
+    = f.submit t(".search_btn"),class: "btn btn-success search"

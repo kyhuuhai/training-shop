@@ -1,14 +1,14 @@
 = form_for(@user) do |f|
   = render 'shared/error_messages', object: f.object
-  = f.label :name
+  = f.label :name, t("carts.index.name")
   = f.text_field :name, class:"form-control"
   = f.label :email
   = f.email_field :email, class:"form-control"
-  = f.label :password
+  = f.label :password, t("password_resets.edit.password")
   = f.password_field :password, class:"form-control"
-  = f.label :password_confirmation
+  = f.label :password_confirmation, t("password_resets.edit.password_confirmation")
   = f.password_field :password_confirmation, class:"form-control"
   - if logged_in?
-    = f.label "Avatar"
+    = f.label :avatar, t(".avatar")
     = f.file_field :avatar
   = f.submit yield(:button_text), class: "btn btn-primary mt-3"

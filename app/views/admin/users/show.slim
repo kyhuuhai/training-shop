@@ -7,17 +7,17 @@
       .avatar
         = gravatar_for @user
     -if @user.is_admin?
-      p Tài khoản: Admin 
+      p= t(".admin")
     -else
-      p Tài khoản: User
+      p= t("layouts.dashboard.user")
     b ID: 
     = @user.id
     br
-    b Tên tài khoản: 
+    b= t("users.show.username")
     = @user.name
     p
       b Email: 
       = @user.email
     p
-      b Address: 
+      b= t("users.show.address")
       = @user.address

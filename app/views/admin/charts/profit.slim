@@ -1,8 +1,10 @@
-= line_chart Order.group_by_day(:created_at).count
-br
-= column_chart Product.group_by_day(:created_at).count
-br
-= pie_chart	 OrderDetail.group_by_day(:created_at).count
-br
-= area_chart OrderDetail.group(:product_id).count
-br
+.row.ml-0
+  .col-sm-3.sidebar
+    = render "layouts/dashboard"
+  .col-sm-9
+    = line_chart Order.group_by_day(:created_at).count, title: t("admin.charts.profit.order_chart_title")
+    br
+    = column_chart Product.group_by_day(:created_at).count, title: t("admin.charts.profit.product_chart_title")
+    br
+    = pie_chart	 OrderDetail.group_by_day(:created_at).count, title: t("admin.charts.profit.order_detail_chart_title")
+    br

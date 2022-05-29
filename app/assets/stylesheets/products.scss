@@ -17,6 +17,10 @@
   padding-top: 1rem;
 }
 
+.ml-0 {
+  margin-left: 0px !important;
+}
+
 .w-30 {
   width: 30% !important;
 }
@@ -72,6 +76,7 @@ tbody {
   .product-thumbnail {
     img {
       height: 150px;
+      width: 150px;
     }
   }
   .btn-action {
@@ -92,7 +97,7 @@ tbody {
   width: 100%;
   // display:flex;
 }
-.card2{
+.card2 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 24%;
   margin-right: 1%;
@@ -114,25 +119,25 @@ tbody {
     color: grey;
     font-size: 22px;
   }
-.description {
-  width: 100%;
-  padding: 0 30px;
-  height: 60px;
-}
-.text{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-.btn-cart {
-  padding: 12px;
-  width: 100%;
-  &:hover {
-    opacity: 0.7;
+  .description {
+    width: 100%;
+    padding: 0 30px;
+    height: 60px;
   }
-}
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .btn-cart {
+    padding: 12px;
+    width: 100%;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 .paginate {
   text-align: center;
@@ -152,16 +157,16 @@ tbody {
 .itemQuantity {
   width: 50%;
   font-size: 16px;
-  .number{
+  .number {
     width: 40%;
     margin-bottom: 10px;
   }
-  .add input{
+  .add input {
     background: #000;
     padding: 5px 0 5px 0;
     color: white;
   }
-  .add input:hover{
+  .add input:hover {
     background: rgb(37, 37, 37);
   }
 }
@@ -232,7 +237,7 @@ tbody {
   padding: 2px 16px;
   color: white;
 }
-.row.sp{
+.row.sp {
   width: 470px;
 }
 .row:after {
@@ -246,7 +251,7 @@ tbody {
   width: 20%;
   margin-left: 2px;
   margin-bottom: 100px;
-  height: 100px
+  height: 100px;
 }
 
 .demo {
@@ -265,7 +270,7 @@ tbody {
   max-width: 50%;
   float: left;
 }
-.anh{
+.anh {
   float: left;
 }
 .details.col-md-6 {
@@ -278,17 +283,17 @@ tbody {
   margin-top: 40px;
   width: 470px;
 }
-.form.control{
+.form.control {
   float: left;
   width: 20%;
   padding: 5px 5px 5px 10px;
   border-radius: 5px;
 }
-.form-control{
+.form-control {
   padding: 5px 5px 5px 10px;
   border-radius: 5px;
 }
-.form.control.search{
+.form.control.search {
   width: 20%;
   margin-left: 10px;
   margin-right: 10px;
@@ -296,14 +301,17 @@ tbody {
 .control-price {
   float: left;
 }
-.search-products{
+.search-products {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.03);
   padding: 18px 10px 15px 10px;
 }
-.btn.btn-success.search{
+.btn.btn-success.search {
   width: 10%;
 }
-b.control-price{
+b.control-price {
   margin-top: 5px;
+}
+.form-new {
+  margin-left: 25%;
 }
