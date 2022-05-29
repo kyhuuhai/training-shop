@@ -1,6 +1,9 @@
 h1 Store Categories
-| Please add categories to your store #{link_to "adding new categorys", new_admin_category_path}
-table.table.table-condensed
+button.CN.new
+  = link_to new_admin_category_path(@category)
+    i.fa.fa-plus-circle
+    |  New category
+table.table.table-condensed.table-bordered
   thead
     tr
       td

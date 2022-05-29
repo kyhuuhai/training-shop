@@ -1,7 +1,10 @@
-h1 Store Categories
-| Please add products to your store #{link_to "adding new products", new_admin_product_path}
+h1 Store Categories 
+button.CN.new
+  = link_to new_admin_product_path(@product)
+    i.fa.fa-plus-circle
+    |  New product
 = render 'search_form'
-table.table.table-condensed
+table.table.table-bordered
   thead
     tr
       td

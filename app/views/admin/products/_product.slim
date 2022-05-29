@@ -1,13 +1,14 @@
 tbody   
   tr
-    td.userName
+    td.code
       = product.code
     td.email
       = product.name
     td.email
       = product.price
-    td.email
-      = product.description
+      |  VND
+    td.text
+      p = product.description
     td.image
       - if product.images.attached? 
         - product.images.each do |image| 

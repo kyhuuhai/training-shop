@@ -76,8 +76,12 @@ textarea,
 select,
 .uneditable-input {
   margin-top: 20px;
-  border: 1px solid#bbb;
+  border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+}
+.navbar-brand{
+  margin-top:-53px;
+  position: relative;
 }

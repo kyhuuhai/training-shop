@@ -1,5 +1,6 @@
 h1 Store Categories
-| Please add categories to your store #{link_to "adding new products", new_admin_product_path}
+-if current_user.is_admin?
+  | Please add categories to your store #{link_to "adding new products", new_admin_product_path}
 = render 'products/form'
 - if !@products.empty?
   .all_products
